@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name MCU_STM32_G0)(type Legacy)(uri ${KIPRJMOD}/libs/MCU_STM32_G0.lib)(options "")(descr ""))
+  (lib (name Venom)(type Legacy)(uri ${KIPRJMOD}/Venom.lib)(options "")(descr ""))
+  (lib (name venom-rescue)(type Legacy)(uri ${KIPRJMOD}/venom-rescue.lib)(options "")(descr ""))
+  (lib (name sense-rescue)(type Legacy)(uri ${KIPRJMOD}/sense-rescue.lib)(options "")(descr ""))
+)
