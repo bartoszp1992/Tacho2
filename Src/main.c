@@ -75,6 +75,7 @@
  2.7.1 refresh at automatic settings close
  2.7.2 turn off chrono if it starts under water
  2.7.3 properly set layout and color scheme after setting auto-close
+ 2.7.4 increased magnetometer divider
 
  todo:
  -already did

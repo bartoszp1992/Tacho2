@@ -24,8 +24,8 @@ volatile int16_t pressureReference = 1026;
 
 
 int32_t offsetADC = -75;
-int32_t offsetMagnetometerX = -2000;
-int32_t offsetMagnetometerY = 2000;
+int32_t offsetMagnetometerX = 0;
+int32_t offsetMagnetometerY = 0;
 
 float gainVoltagePassive = 1.06;
 
@@ -301,7 +301,7 @@ void sensingRead(void) {
 
 	//								LIS3MDL DECREASE VALUE
 
-	uint16_t magneticFieldDivider = 90;
+	uint16_t magneticFieldDivider = 200;
 
 	magneticFieldX = magneticFieldXADC / magneticFieldDivider;
 	magneticFieldY = magneticFieldYADC / ((float) magneticFieldDivider * 1.66);
