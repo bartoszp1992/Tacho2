@@ -175,6 +175,7 @@ void interfaceSelectLayout(uint8_t l) {
 		showSeconds = 0;
 		showThermometer = 0;
 		showDigitalInterface = 1;
+		showMeter = 0;
 		LPMode = 1;
 
 		digitalX = 60;
