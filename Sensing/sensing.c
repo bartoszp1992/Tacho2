@@ -301,7 +301,7 @@ void sensingRead(void) {
 
 	//								LIS3MDL DECREASE VALUE
 
-	uint16_t magneticFieldDivider = 200;
+	uint16_t magneticFieldDivider = 270;
 
 	magneticFieldX = magneticFieldXADC / magneticFieldDivider;
 	magneticFieldY = magneticFieldYADC / ((float) magneticFieldDivider * 1.66);
