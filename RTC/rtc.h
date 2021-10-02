@@ -59,6 +59,8 @@ volatile uint8_t day;
 volatile uint8_t month;
 volatile uint8_t year;
 
+volatile uint32_t moonPhase;
+
 volatile int8_t chronoStartYear;
 volatile int8_t chronoStartMonth;
 volatile int8_t chronoStartDay;

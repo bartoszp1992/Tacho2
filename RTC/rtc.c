@@ -9,6 +9,7 @@ void rtcInit(void) {
 
 }
 
+
 void rtcGetTime() {
 
 	HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
@@ -30,6 +31,26 @@ void rtcGetTime() {
 	day = sDate.Date;
 	month = sDate.Month;
 	year = sDate.Year;
+
+	//							MOON PHASE COUNT
+
+	float X = (month + 9) / 12;
+	uint32_t A = 4716 + (year+2000) + (uint32_t) X;
+	float Y = 275 * month / 9;
+	float V = 7 * A / 4;
+	float B = 1729279.5 + 367 * (year+2000) + (uint32_t) Y - (uint32_t) V + day;
+	float Q = (A + 83) / 100;
+	uint32_t C = (uint32_t) Q;
+	float W = 3 * (C + 1) / 4;
+	uint32_t E = (uint32_t) W;
+	float JD = B + 38 - E; //julian day
+	float MS = 29.5305902778; //average value of synodic month
+	float phasePrimary = ((JD / MS) - 0.3033);
+	uint32_t phaseInteger = (uint32_t) phasePrimary;
+	float phaseFinal = (phasePrimary - (float) phaseInteger) * 100;
+	moonPhase = (uint32_t) phaseFinal;
+
+	// 0 - new moon, 25- I, 50- II(full moon), 75- III
 
 	if (mode == MODE_NORMAL) {
 		chronoMinutes = 0;
@@ -79,35 +100,6 @@ void rtcGetTime() {
 			chronoMonth = chronoMonth + 12;
 		}
 	}
-
-//	//chrono data
-//	if (mode == MODE_NORMAL) {
-//		chronoMinutes = 0;
-//		chronoSeconds = 0;
-//		chronoDecimals = 0;
-//
-//
-//	} else if (mode == MODE_CHRONO) {
-//
-//		chronoDecimals = 0;
-//
-//		chronoSeconds = seconds - chronoStartSeconds;
-//		if ((chronoSeconds % 60 == 0) && chronoMinutes != 0)
-//			chronoMinutes++;
-//
-//		if (chronoStartDecimals <= decimals)
-//			chronoSeconds = seconds - chronoStartSeconds;
-//
-//
-//		if (chronoStartSeconds <= seconds)
-//			chronoMinutes = minutes - chronoStartMinutes;
-//
-//		chronoDecimals = 0;
-//
-//
-//	} else if (mode == MODE_STOP) {
-//
-//	}
 
 }
 

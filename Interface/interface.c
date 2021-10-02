@@ -18,6 +18,7 @@ void interfaceSelectLayout(uint8_t l) {
 		showThermometer = 0;
 		showDigitalInterface = 0;
 		showMeter = 0;
+		showMoonPhase = 1;
 		LPMode = 1;
 
 		//sensor readings positions
@@ -83,6 +84,11 @@ void interfaceSelectLayout(uint8_t l) {
 		//pointer shifts
 		batteryPointerShift = 20;
 		pressurePointerShift = 85;
+
+		//moon Phase
+		moonPhaseX = 100;
+		moonPhaseY = 50;
+		moonPhaseRadius = 15;
 	}
 
 	else if (l == 2) { //navi
@@ -97,6 +103,7 @@ void interfaceSelectLayout(uint8_t l) {
 		showThermometer = 1;
 		showDigitalInterface = 0;
 		showMeter = 0;
+		showMoonPhase = 1;
 		LPMode = 1;
 
 		//sensor readings positions
@@ -162,6 +169,11 @@ void interfaceSelectLayout(uint8_t l) {
 		//pointer shifts
 		batteryPointerShift = 20;
 		pressurePointerShift = 85;
+
+		//moon Phase
+		moonPhaseX = 150;
+		moonPhaseY = 50;
+		moonPhaseRadius = 10;
 	}
 
 	else if (l == 3) { //digital
@@ -176,6 +188,7 @@ void interfaceSelectLayout(uint8_t l) {
 		showThermometer = 0;
 		showDigitalInterface = 1;
 		showMeter = 0;
+		showMoonPhase = 0;
 		LPMode = 1;
 
 		digitalX = 60;
@@ -258,6 +271,7 @@ void interfaceSelectLayout(uint8_t l) {
 		showThermometer = 1;
 		showDigitalInterface = 0;
 		showMeter = 0;
+		showMoonPhase = 1;
 		LPMode = 1;
 
 		temperatureX = 38;
@@ -317,6 +331,11 @@ void interfaceSelectLayout(uint8_t l) {
 		//pointer shifts
 		batteryPointerShift = 20;
 		pressurePointerShift = 85;
+
+		//moon Phase
+		moonPhaseX = 150;
+		moonPhaseY = 50;
+		moonPhaseRadius = 10;
 	}
 
 	else if (l == 5) { //meter
@@ -331,6 +350,7 @@ void interfaceSelectLayout(uint8_t l) {
 		showThermometer = 0;
 		showDigitalInterface = 0;
 		showMeter = 1;
+		showMoonPhase = 0;
 		LPMode = 0;
 
 		meterX = 59;
@@ -528,7 +548,7 @@ void interfaceDrawIndex() {
 	//										METER INDEX
 
 	if (showMeter == 1) {
-		Paint_DrawString_EN(meterX + 65, meterY+2, "V", &Font16, colorSecond,
+		Paint_DrawString_EN(meterX + 65, meterY + 2, "V", &Font16, colorSecond,
 				colorMain);
 		Paint_DrawString_EN(meterX + 56, meterY + 18, "Vd", &Font16,
 				colorSecond, colorMain);
@@ -778,20 +798,21 @@ void interfaceDrawPointers() {
 	pressureAngle = 2 * 3.14 / 100 * (pressureValue - 950 - 25);
 
 	//										LOCK INDICATOR
-	if(flagLocked == LOCKED){
-		Paint_DrawCircle(mainStartX, mainStartY, 10, colorSecond, DOT_PIXEL_2X2, DRAW_FILL_EMPTY);
+	if (flagLocked == LOCKED) {
+		Paint_DrawCircle(mainStartX, mainStartY, 10, colorSecond, DOT_PIXEL_2X2,
+				DRAW_FILL_EMPTY);
 	}
 
 	//										METER
 
 	if (showMeter == 1) {
-		Paint_DrawString_EN(meterX+2, meterY+2, voltagePassive, &Font16,
+		Paint_DrawString_EN(meterX + 2, meterY + 2, voltagePassive, &Font16,
 				colorSecond, colorMain);
 
-		Paint_DrawString_EN(meterX+2, meterY + 18, voltageDrop, &Font16,
+		Paint_DrawString_EN(meterX + 2, meterY + 18, voltageDrop, &Font16,
 				colorSecond, colorMain);
 
-		Paint_DrawString_EN(meterX+2, meterY + 34, resistance, &Font16,
+		Paint_DrawString_EN(meterX + 2, meterY + 34, resistance, &Font16,
 				colorSecond, colorMain);
 
 	}
@@ -1029,10 +1050,39 @@ void interfaceDrawBatteryWarning() {
 
 void interfaceDrawBoards() {
 
+	//										MOON PHASE
+
+	if (showMoonPhase == 1) {
+
+//		moonPhase = 51;
+
+		Paint_DrawCircle(moonPhaseX, moonPhaseY, moonPhaseRadius, colorSecond,
+				DOT_PIXEL_1X1, DRAW_FILL_FULL);
+
+		float moonPhaseShift;
+
+		if (moonPhase < 50) {
+
+			moonPhaseShift = ((float) moonPhase / 25) * moonPhaseRadius;
+			Paint_DrawCircle(moonPhaseX + (uint32_t) moonPhaseShift, moonPhaseY,
+					moonPhaseRadius, colorMain, DOT_PIXEL_1X1, DRAW_FILL_FULL);
+
+		} else if (moonPhase > 50) {
+			moonPhase = 100 - moonPhase;
+
+			moonPhaseShift = ((float) moonPhase / 25) * moonPhaseRadius;
+			Paint_DrawCircle(moonPhaseX - (uint32_t) moonPhaseShift, moonPhaseY,
+					moonPhaseRadius, colorMain, DOT_PIXEL_1X1, DRAW_FILL_FULL);
+
+		}
+
+	}
+
 	//										METER
 
-	if(showMeter  == 1){
-		Paint_DrawRectangle(meterX, meterY, meterX+82, meterY+52, colorSecond, DOT_PIXEL_2X2, DRAW_FILL_EMPTY);
+	if (showMeter == 1) {
+		Paint_DrawRectangle(meterX, meterY, meterX + 82, meterY + 52,
+				colorSecond, DOT_PIXEL_2X2, DRAW_FILL_EMPTY);
 	}
 
 	//										DIGITAL INTERFACE FIELD

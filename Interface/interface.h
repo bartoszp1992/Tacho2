@@ -114,6 +114,10 @@ uint8_t mainBoardRadius;
 uint8_t smallBoardRadius;
 //uint8_t sheathRadius;
 
+uint8_t moonPhaseX;
+uint8_t moonPhaseY;
+uint8_t moonPhaseRadius;
+
 //pointers lengths
 uint8_t hourPointerLength;
 uint8_t minutePointerLength;
@@ -143,6 +147,7 @@ uint8_t showDate;
 uint8_t showNavi;
 uint8_t showDigitalInterface;
 uint8_t showMeter;
+uint8_t showMoonPhase;
 
 
 //pointers angles(in rad)

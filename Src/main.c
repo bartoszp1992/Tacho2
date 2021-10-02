@@ -76,6 +76,7 @@
  2.7.2 turn off chrono if it starts under water
  2.7.3 properly set layout and color scheme after setting auto-close
  2.7.4 increased magnetometer divider
+ 2.8 added moon phase
 
  todo:
  -already did
@@ -283,6 +284,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 
 	while (1) {
+
+
+		//									DEBUG
+
+//		uint32_t moonPhase = rtcGetMoonPhase(1992, 7, 31);
+
 
 		//									MAIN LOOP
 
@@ -620,7 +627,7 @@ static void MX_RTC_Init(void)
   }
   sDate.WeekDay = RTC_WEEKDAY_TUESDAY;
   sDate.Month = RTC_MONTH_APRIL;
-  sDate.Date = 8;
+  sDate.Date = 20;
   sDate.Year = 20;
 
   if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN) != HAL_OK)
