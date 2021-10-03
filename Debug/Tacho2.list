@@ -33268,7 +33268,7 @@ void interfaceDrawBoards() {
  800d9d2:	f7f3 f993 	bl	8000cfc <__aeabi_fmul>
  800d9d6:	1c03      	adds	r3, r0, #0
  800d9d8:	607b      	str	r3, [r7, #4]
-			Paint_DrawCircle(moonPhaseX + (uint32_t) moonPhaseShift, moonPhaseY,
+			Paint_DrawCircle(moonPhaseX - (uint32_t) moonPhaseShift, moonPhaseY,
  800d9da:	4b0e      	ldr	r3, [pc, #56]	; (800da14 <interfaceDrawBoards+0xa8>)
  800d9dc:	781b      	ldrb	r3, [r3, #0]
  800d9de:	b29c      	uxth	r4, r3
@@ -33276,7 +33276,7 @@ void interfaceDrawBoards() {
  800d9e2:	f7f2 fdd1 	bl	8000588 <__aeabi_f2uiz>
  800d9e6:	0003      	movs	r3, r0
  800d9e8:	b29b      	uxth	r3, r3
- 800d9ea:	18e3      	adds	r3, r4, r3
+ 800d9ea:	1ae3      	subs	r3, r4, r3
  800d9ec:	b298      	uxth	r0, r3
  800d9ee:	4b0a      	ldr	r3, [pc, #40]	; (800da18 <interfaceDrawBoards+0xac>)
  800d9f0:	781b      	ldrb	r3, [r3, #0]
@@ -33338,7 +33338,7 @@ void interfaceDrawBoards() {
  800da6c:	f7f3 f946 	bl	8000cfc <__aeabi_fmul>
  800da70:	1c03      	adds	r3, r0, #0
  800da72:	607b      	str	r3, [r7, #4]
-			Paint_DrawCircle(moonPhaseX - (uint32_t) moonPhaseShift, moonPhaseY,
+			Paint_DrawCircle(moonPhaseX + (uint32_t) moonPhaseShift, moonPhaseY,
  800da74:	4be5      	ldr	r3, [pc, #916]	; (800de0c <interfaceDrawBoards+0x4a0>)
  800da76:	781b      	ldrb	r3, [r3, #0]
  800da78:	b29c      	uxth	r4, r3
@@ -33346,7 +33346,7 @@ void interfaceDrawBoards() {
  800da7c:	f7f2 fd84 	bl	8000588 <__aeabi_f2uiz>
  800da80:	0003      	movs	r3, r0
  800da82:	b29b      	uxth	r3, r3
- 800da84:	1ae3      	subs	r3, r4, r3
+ 800da84:	18e3      	adds	r3, r4, r3
  800da86:	b298      	uxth	r0, r3
  800da88:	4be1      	ldr	r3, [pc, #900]	; (800de10 <interfaceDrawBoards+0x4a4>)
  800da8a:	781b      	ldrb	r3, [r3, #0]

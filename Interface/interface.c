@@ -1064,14 +1064,14 @@ void interfaceDrawBoards() {
 		if (moonPhase < 50) {
 
 			moonPhaseShift = ((float) moonPhase / 25) * moonPhaseRadius;
-			Paint_DrawCircle(moonPhaseX + (uint32_t) moonPhaseShift, moonPhaseY,
+			Paint_DrawCircle(moonPhaseX - (uint32_t) moonPhaseShift, moonPhaseY,
 					moonPhaseRadius, colorMain, DOT_PIXEL_1X1, DRAW_FILL_FULL);
 
 		} else if (moonPhase > 50) {
 			moonPhase = 100 - moonPhase;
 
 			moonPhaseShift = ((float) moonPhase / 25) * moonPhaseRadius;
-			Paint_DrawCircle(moonPhaseX - (uint32_t) moonPhaseShift, moonPhaseY,
+			Paint_DrawCircle(moonPhaseX + (uint32_t) moonPhaseShift, moonPhaseY,
 					moonPhaseRadius, colorMain, DOT_PIXEL_1X1, DRAW_FILL_FULL);
 
 		}
