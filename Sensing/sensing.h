@@ -64,6 +64,8 @@ ADC_HandleTypeDef hadc1;
 #define LIS3MDL_MODE_SINGLE 0x01
 #define LIS3MDL_MODE_CONTINOUS 0x00
 
+#define MAGNETIC_FIELD_MEASURES 200
+
 
 
 
@@ -113,6 +115,20 @@ uint8_t batteryState;
 
 int16_t magneticFieldX;
 int16_t magneticFieldY;
+
+int16_t magneticFieldContainerX[MAGNETIC_FIELD_MEASURES];
+int16_t magneticFieldContainerY[MAGNETIC_FIELD_MEASURES];
+int16_t magneticFieldCounter;
+
+int16_t magneticFieldCenterX;
+int16_t magneticFieldCenterY;
+
+int16_t magneticFieldMinX;
+int16_t magneticFieldMaxX;
+int16_t magneticFieldMinY;
+int16_t magneticFieldMaxY;
+
+
 int16_t azimuth;
 
 //									DATA MODIFICATORS
@@ -142,6 +158,9 @@ uint8_t i2cTimeout;
 void sensingRead(void);
 void sensingInit(void);
 void float2Text(char *str, float input);
+
+int16_t findMax(int16_t *data, uint16_t size);
+int16_t findMin(int16_t *data, uint16_t size);
 
 
 BME280_S32_t BME280_compensate_T_int32(BME280_S32_t adc_T);

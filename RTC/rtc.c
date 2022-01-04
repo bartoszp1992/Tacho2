@@ -99,6 +99,11 @@ void rtcGetTime() {
 			chronoYear--;
 			chronoMonth = chronoMonth + 12;
 		}
+
+		//max chrono count
+		if(chronoHours >= 5){
+			mode = MODE_STOP;
+		}
 	}
 
 }

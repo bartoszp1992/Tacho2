@@ -1,5 +1,5 @@
 #include "main.h"
-#include "math.h"
+#include <math.h>
 
 #include "../Display/e-Paper/EPD_1in54_V2.h"
 #include "../Display/Config/DEV_Config.h"
@@ -17,9 +17,6 @@
 
 #define COLOR_MAIN WHITE
 #define COLOR_SECOND BLACK
-
-//#define LAYOUT_BREITLING 1
-//#define LAYOUT_TIMEX 2
 
 #define COLOR_SCHEME_WHITE 1
 #define COLOR_SCHEME_BLACK 2
@@ -97,7 +94,6 @@ uint8_t dateY;
 uint8_t batteryStateStartX;
 uint8_t batteryStateStartY;
 
-
 uint8_t chronoMinutesStartX;
 uint8_t chronoMinutesStartY;
 
@@ -109,6 +105,8 @@ uint8_t chronoDecimalsStartY;
 
 uint8_t mainStartX;
 uint8_t mainStartY;
+
+uint8_t compassBoardRadius;
 
 uint8_t mainBoardRadius;
 uint8_t smallBoardRadius;
@@ -144,7 +142,8 @@ uint8_t showBatteryState;
 uint8_t showSeconds;
 uint8_t showChrono;
 uint8_t showDate;
-uint8_t showNavi;
+uint8_t showNaviDigital;
+uint8_t showNaviAnalog;
 uint8_t showDigitalInterface;
 uint8_t showMeter;
 uint8_t showMoonPhase;
@@ -162,11 +161,14 @@ float chronoDecimalsAngle;
 float batteryStateAngle;
 float pressureAngle;
 
+float compassAngle;
+
 //index lengths
 uint8_t secondsIndexLength;
 uint8_t chronoMinutesIndexLength;
 uint8_t chronoDecimalsIndexLength;
 uint8_t mainIndexLength;
+uint8_t compassPointerLength;
 
 uint8_t batteryStateIndexLength;
 
@@ -192,11 +194,9 @@ void interfaceInit(void);
 
 void interfaceUpdate(uint8_t mode);
 
-void interfaceDrawPointers(void);
+void interfaceDrawLayer(uint8_t layer);
 
 void interfaceDrawBatteryWarning(void);
-
-void interfaceDrawBoards(void);
 
 void interfaceStart(void);
 
@@ -208,6 +208,6 @@ void interfaceSelectLayout(uint8_t l);
 
 void interfaceSelectColorScheme(uint8_t cs);
 
-void interfaceDrawIndex(void);
+
 
 #endif

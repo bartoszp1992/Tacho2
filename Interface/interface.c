@@ -11,7 +11,8 @@ void interfaceSelectLayout(uint8_t l) {
 		showBarometer = 1;
 		showBatteryState = 0;
 		showChrono = 0;
-		showNavi = 0;
+		showNaviDigital = 0;
+		showNaviAnalog = 0;
 		showDate = 1;
 		showHigrometer = 0;
 		showSeconds = 0;
@@ -22,7 +23,6 @@ void interfaceSelectLayout(uint8_t l) {
 		LPMode = 1;
 
 		//sensor readings positions
-
 		temperatureX = 38;
 		temperatureY = 44;
 
@@ -33,8 +33,8 @@ void interfaceSelectLayout(uint8_t l) {
 		pressureY = 50;
 
 		//compass and altitude
-		compassX = 30;
-		compassY = 78;
+		compassX = 55;
+		compassY = 100;
 
 		//date position
 		dateX = 153;
@@ -57,13 +57,15 @@ void interfaceSelectLayout(uint8_t l) {
 		mainStartX = 100;
 		mainStartY = 100;
 
+		compassBoardRadius = 25;
+
 		mainBoardRadius = 97;
 		smallBoardRadius = 28;
 
 		//pointers lengths
 
-		hourPointerLength = 45;
-		minutePointerLength = 70;
+		hourPointerLength = 55;
+		minutePointerLength = 80;
 		secondPointerLength = 20;
 
 		chronoDecimalsPointerLength = 20;
@@ -72,6 +74,8 @@ void interfaceSelectLayout(uint8_t l) {
 
 		batteryStatePointerLength = 35;
 		pressurePointerLength = 100;
+
+		compassPointerLength = 18;
 
 		//index lengths
 		secondsIndexLength = 4;
@@ -96,7 +100,8 @@ void interfaceSelectLayout(uint8_t l) {
 		showBarometer = 1;
 		showBatteryState = 1;
 		showChrono = 1;
-		showNavi = 1;
+		showNaviDigital = 0;
+		showNaviAnalog = 1;
 		showDate = 1;
 		showHigrometer = 1;
 		showSeconds = 0;
@@ -118,8 +123,8 @@ void interfaceSelectLayout(uint8_t l) {
 		pressureY = 50;
 
 		//compass and altitude
-		compassX = 30;
-		compassY = 78;
+		compassX = 55;
+		compassY = 100;
 
 		//date position
 		dateX = 153;
@@ -142,13 +147,15 @@ void interfaceSelectLayout(uint8_t l) {
 		mainStartX = 100;
 		mainStartY = 100;
 
+		compassBoardRadius = 25;
+
 		mainBoardRadius = 97;
 		smallBoardRadius = 28;
 
 		//pointers lengths
 
-		hourPointerLength = 45;
-		minutePointerLength = 70;
+		hourPointerLength = 55;
+		minutePointerLength = 80;
 		secondPointerLength = 20;
 
 		chronoDecimalsPointerLength = 20;
@@ -157,6 +164,8 @@ void interfaceSelectLayout(uint8_t l) {
 
 		batteryStatePointerLength = 35;
 		pressurePointerLength = 100;
+
+		compassPointerLength = 18;
 
 		//index lengths
 		secondsIndexLength = 4;
@@ -181,7 +190,8 @@ void interfaceSelectLayout(uint8_t l) {
 		showBarometer = 0;
 		showBatteryState = 1;
 		showChrono = 1;
-		showNavi = 0;
+		showNaviDigital = 0;
+		showNaviAnalog = 0;
 		showDate = 1;
 		showHigrometer = 0;
 		showSeconds = 0;
@@ -235,8 +245,8 @@ void interfaceSelectLayout(uint8_t l) {
 
 		//pointers lengths
 
-		hourPointerLength = 45;
-		minutePointerLength = 70;
+		hourPointerLength = 55;
+		minutePointerLength = 80;
 		secondPointerLength = 20;
 
 		chronoDecimalsPointerLength = 20;
@@ -245,6 +255,8 @@ void interfaceSelectLayout(uint8_t l) {
 
 		batteryStatePointerLength = 35;
 		pressurePointerLength = 100;
+
+		compassPointerLength = 20;
 
 		//index lengths
 		secondsIndexLength = 4;
@@ -264,7 +276,8 @@ void interfaceSelectLayout(uint8_t l) {
 		showBarometer = 1;
 		showBatteryState = 1;
 		showChrono = 1;
-		showNavi = 0;
+		showNaviDigital = 0;
+		showNaviAnalog = 0;
 		showDate = 1;
 		showHigrometer = 1;
 		showSeconds = 1;
@@ -309,8 +322,8 @@ void interfaceSelectLayout(uint8_t l) {
 
 		//pointers lengths
 
-		hourPointerLength = 45;
-		minutePointerLength = 70;
+		hourPointerLength = 55;
+		minutePointerLength = 80;
 		secondPointerLength = 20;
 
 		chronoDecimalsPointerLength = 20;
@@ -319,6 +332,8 @@ void interfaceSelectLayout(uint8_t l) {
 
 		batteryStatePointerLength = 35;
 		pressurePointerLength = 100;
+
+		compassPointerLength = 20;
 
 		//index lengths
 		secondsIndexLength = 4;
@@ -343,7 +358,8 @@ void interfaceSelectLayout(uint8_t l) {
 		showBarometer = 0;
 		showBatteryState = 1;
 		showChrono = 0;
-		showNavi = 0;
+		showNaviDigital = 0;
+		showNaviAnalog = 0;
 		showDate = 0;
 		showHigrometer = 0;
 		showSeconds = 0;
@@ -397,8 +413,8 @@ void interfaceSelectLayout(uint8_t l) {
 
 		//pointers lengths
 
-		hourPointerLength = 45;
-		minutePointerLength = 70;
+		hourPointerLength = 55;
+		minutePointerLength = 80;
 		secondPointerLength = 20;
 
 		chronoDecimalsPointerLength = 20;
@@ -407,6 +423,8 @@ void interfaceSelectLayout(uint8_t l) {
 
 		batteryStatePointerLength = 35;
 		pressurePointerLength = 100;
+
+		compassPointerLength = 20;
 
 		//index lengths
 		secondsIndexLength = 4;
@@ -543,160 +561,315 @@ void interfaceClear() {
 	Paint_Clear(colorMain);
 }
 
-void interfaceDrawIndex() {
+void interfaceDrawLayer(uint8_t layer) {
 
-	//										METER INDEX
+	if (layer == 1) { //boards
+		//										MOON PHASE
 
-	if (showMeter == 1) {
-		Paint_DrawString_EN(meterX + 65, meterY + 2, "V", &Font16, colorSecond,
-				colorMain);
-		Paint_DrawString_EN(meterX + 56, meterY + 18, "Vd", &Font16,
-				colorSecond, colorMain);
-		Paint_DrawString_EN(meterX + 56, meterY + 34, "kR", &Font16,
-				colorSecond, colorMain);
-	}
+		if (showMoonPhase == 1) {
 
-	//										DIGITAL INTERFACE INDEX
+			//		moonPhase = 51;
 
-	if (showDigitalInterface == 1) {
-		Paint_DrawString_EN(digitalX + 55, digitalY, "hPa", &Font12, colorMain,
-				colorSecond);
-		Paint_DrawString_EN(digitalX + 55, digitalY + 12, "%RH", &Font12,
-				colorMain, colorSecond);
-		Paint_DrawString_EN(digitalX + 42, digitalY + 24, "deg C", &Font12,
-				colorMain, colorSecond);
-	}
+			Paint_DrawCircle(moonPhaseX, moonPhaseY, moonPhaseRadius,
+					colorSecond, DOT_PIXEL_1X1, DRAW_FILL_FULL);
 
-	//										BAROMETER INDEX
+			float moonPhaseShift;
 
-	if (showBarometer == 1) {
-		Paint_DrawNum(177, 102, 975, &Font8, colorSecond, colorMain);
-		Paint_DrawString_EN(177, 111, "hPa", &Font8, colorSecond, colorMain);
-		Paint_DrawNum(102, 185, 1000, &Font8, colorSecond, colorMain);
-		Paint_DrawNum(5, 102, 1025, &Font8, colorSecond, colorMain);
-	}
+			if (moonPhase < 50) {
 
-	//										HUMIDITY INDEX
+				moonPhaseShift = ((float) moonPhase / 25) * moonPhaseRadius;
+				Paint_DrawCircle(moonPhaseX - (uint32_t) moonPhaseShift,
+						moonPhaseY, moonPhaseRadius, colorMain, DOT_PIXEL_1X1,
+						DRAW_FILL_FULL);
 
-	if (showHigrometer == 1) {
-		for (uint8_t i = 0; i <= 50; i = i + 5) {
-			Paint_DrawLine(humidityX, humidityY + i, humidityX - 2,
-					humidityY + i, colorSecond, DOT_PIXEL_1X1,
-					LINE_STYLE_SOLID);
-		}
+			} else if (moonPhase > 50) {
+				moonPhase = 100 - moonPhase;
 
-		Paint_DrawString_EN(humidityX + 6, humidityY, "0%RH", &Font8,
-				colorSecond, colorMain);
-		Paint_DrawString_EN(humidityX + 6, humidityY + 43, "100", &Font8,
-				colorSecond, colorMain);
-	}
+				moonPhaseShift = ((float) moonPhase / 25) * moonPhaseRadius;
+				Paint_DrawCircle(moonPhaseX + (uint32_t) moonPhaseShift,
+						moonPhaseY, moonPhaseRadius, colorMain, DOT_PIXEL_1X1,
+						DRAW_FILL_FULL);
 
-	//										ALTIMETER UNIT
-	if (showNavi == 1) {
-		Paint_DrawChar(compassX + 38, compassY + 31, 'm', &Font12, colorSecond,
-				colorMain);
-	}
-
-	//										COMPASS INDEX
-
-	if (showNavi == 1) {
-
-		Paint_DrawChar(compassX + 22, compassY + 1, 'N', &Font8, colorSecond,
-				colorMain);
-		Paint_DrawChar(compassX + 22, compassY + 20, 'S', &Font8, colorSecond,
-				colorMain);
-		Paint_DrawChar(compassX + 2, compassY + 11, 'W', &Font8, colorSecond,
-				colorMain);
-		Paint_DrawChar(compassX + 40, compassY + 11, 'E', &Font8, colorSecond,
-				colorMain);
-
-	}
-
-	//										BATTERY STATE INDEX
-
-	if (showBatteryState == 1) {
-		Paint_DrawLine(batteryStateStartX + batteryPointerShift,
-				batteryStateStartY,
-				batteryStateStartX + batteryPointerShift
-						+ batteryStateIndexLength, batteryStateStartY,
-				colorSecond, DOT_PIXEL_2X2, LINE_STYLE_SOLID);
-		Paint_DrawLine(batteryStateStartX,
-				batteryStateStartY + batteryPointerShift, batteryStateStartX,
-				batteryStateStartY + batteryPointerShift
-						+ batteryStateIndexLength, colorSecond, DOT_PIXEL_2X2,
-				LINE_STYLE_SOLID);
-	}
-
-	//										TEMPERATURE UNIT
-
-	if (showThermometer == 1) {
-		Paint_DrawCircle(temperatureX + 21, temperatureY + 4, 2, colorMain,
-				DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
-		Paint_DrawString_EN(temperatureX + 24, temperatureY, "C", &Font12,
-				colorMain, colorSecond);
-	}
-
-	//										CHRONO DECIMALS INDEX
-
-	if (showChrono == 1) {
-		for (uint8_t i = 0; i < 10; i++) {
-
-			Paint_DrawLine(
-					cos(chronoDecimalsIndexAngle[i])
-							* (smallBoardRadius - chronoDecimalsIndexLength)
-							+ chronoDecimalsStartX,
-					sin(chronoDecimalsIndexAngle[i])
-							* (smallBoardRadius - chronoDecimalsIndexLength)
-							+ chronoDecimalsStartY,
-
-					cos(chronoDecimalsIndexAngle[i]) * (smallBoardRadius)
-							+ chronoDecimalsStartX,
-					sin(chronoDecimalsIndexAngle[i]) * (smallBoardRadius)
-							+ chronoDecimalsStartY, colorMain, DOT_PIXEL_1X1,
-					LINE_STYLE_SOLID);
+			}
 
 		}
 
-		//										CHRONO DECIMALS DIGITS
-		Paint_DrawString_EN(chronoDecimalsStartX - 4, chronoDecimalsStartY - 24,
-				"0", &Font12, colorMain, colorSecond);
-		Paint_DrawString_EN(chronoDecimalsStartX + 12,
-				chronoDecimalsStartY - 12, "2", &Font12, colorMain,
-				colorSecond);
-		Paint_DrawString_EN(chronoDecimalsStartX + 6, chronoDecimalsStartY + 6,
-				"4", &Font12, colorMain, colorSecond);
-		Paint_DrawString_EN(chronoDecimalsStartX - 14, chronoDecimalsStartY + 6,
-				"6", &Font12, colorMain, colorSecond);
-		Paint_DrawString_EN(chronoDecimalsStartX - 18,
-				chronoDecimalsStartY - 12, "8", &Font12, colorMain,
-				colorSecond);
+		//										METER
 
-		//										CHRONO MINUTES INDEX
-		for (uint8_t i = 0; i < 30; i++) {
+		if (showMeter == 1) {
+			Paint_DrawRectangle(meterX, meterY, meterX + 82, meterY + 52,
+					colorSecond, DOT_PIXEL_2X2, DRAW_FILL_EMPTY);
+		}
 
-			Paint_DrawLine(
-					cos(chronoMinutesIndexAngle[i])
-							* (smallBoardRadius - chronoMinutesIndexLength)
-							+ chronoMinutesStartX,
-					sin(chronoMinutesIndexAngle[i])
-							* (smallBoardRadius - chronoMinutesIndexLength)
-							+ chronoMinutesStartY,
+		//										DIGITAL INTERFACE FIELD
 
-					cos(chronoMinutesIndexAngle[i]) * (smallBoardRadius)
-							+ chronoMinutesStartX,
-					sin(chronoMinutesIndexAngle[i]) * (smallBoardRadius)
-							+ chronoMinutesStartY, colorMain, DOT_PIXEL_1X1,
+		if (showDigitalInterface == 1) {
+			Paint_DrawRectangle(digitalX, digitalY, digitalX + 80,
+					digitalY + 37, colorSecond, DOT_PIXEL_1X1, DRAW_FILL_FULL);
+
+		}
+
+		//										TEMPERATURE FIELD
+
+		if (showThermometer == 1) {
+			Paint_DrawRectangle(temperatureX - 7, temperatureY,
+					temperatureX + 34, temperatureY + 12, colorSecond,
+					DOT_PIXEL_2X2, DRAW_FILL_FULL); // date window
+		}
+
+		//										HUMIDITY BAR FIELD
+
+		if (showHigrometer == 1) {
+			Paint_DrawRectangle(humidityX, humidityY, humidityX + 5,
+					humidityY + 50, colorSecond, DOT_PIXEL_1X1,
+					DRAW_FILL_EMPTY);
+		}
+
+		//										COMPASS DIGITAL
+		if (showNaviDigital == 1) {
+			Paint_DrawRectangle(compassX, compassY, compassX + 48,
+					compassY + 44, colorSecond, DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
+			Paint_DrawLine(compassX, compassY + 29, compassX + 48,
+					compassY + 29, colorSecond, DOT_PIXEL_1X1,
 					LINE_STYLE_SOLID);
+		}
 
-			if (i % 5 == 0) {
+		//										COMPASS ANALOG
+
+		if (showNaviAnalog == 1) {
+			Paint_DrawCircle(compassX, compassY, compassBoardRadius,
+					colorSecond, DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
+			Paint_DrawCircle(compassX, compassY, 2, colorSecond, DOT_PIXEL_1X1,
+					DRAW_FILL_FULL);
+
+		}
+
+		//										MAIN BOARD
+
+		Paint_DrawCircle(100, 100, mainBoardRadius, colorSecond, DOT_PIXEL_1X1,
+				DRAW_FILL_EMPTY); //main
+
+		//										CHRONO DECIMALS BOARD
+
+		if (showChrono == 1) {
+			Paint_DrawCircle(chronoDecimalsStartX, chronoDecimalsStartY,
+					smallBoardRadius + 2, colorSecond, DOT_PIXEL_1X1,
+					DRAW_FILL_EMPTY);
+			Paint_DrawCircle(chronoDecimalsStartX, chronoDecimalsStartY,
+					smallBoardRadius, colorSecond, DOT_PIXEL_1X1,
+					DRAW_FILL_FULL); //chrono decimals
+
+			//										CHRONO MINUTES BOARD
+
+			Paint_DrawCircle(chronoMinutesStartX, chronoMinutesStartY,
+					smallBoardRadius + 2, colorSecond, DOT_PIXEL_1X1,
+					DRAW_FILL_EMPTY);
+			Paint_DrawCircle(chronoMinutesStartX, chronoMinutesStartY,
+					smallBoardRadius, colorSecond, DOT_PIXEL_1X1,
+					DRAW_FILL_FULL); //chrono minutes
+		}
+
+		//										SECONDS BOARD
+
+		if (showSeconds == 1) {
+			Paint_DrawCircle(secondsStartX, secondsStartY, smallBoardRadius + 2,
+					colorSecond, DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
+			Paint_DrawCircle(secondsStartX, secondsStartY, smallBoardRadius,
+					colorSecond, DOT_PIXEL_1X1, DRAW_FILL_FULL); //seconds
+		}
+
+		//										DATE WINDOW
+		if (showDate == 1) {
+			Paint_DrawRectangle(dateX - 3, dateY - 3, dateX + 17, dateY + 14,
+					colorSecond, DOT_PIXEL_2X2, DRAW_FILL_EMPTY); // date window
+		}
+
+		//										DOTS
+
+		if (showChrono == 1) {
+			Paint_DrawCircle(chronoDecimalsStartX, chronoDecimalsStartY, 2,
+					colorMain, DOT_PIXEL_1X1, DRAW_FILL_FULL);
+			Paint_DrawCircle(chronoMinutesStartX, chronoMinutesStartY, 2,
+					colorMain, DOT_PIXEL_1X1, DRAW_FILL_FULL);
+			Paint_DrawCircle(secondsStartX, secondsStartY, 2, colorMain,
+					DOT_PIXEL_1X1, DRAW_FILL_FULL);
+		}
+
+		Paint_DrawString_EN(82, 7, "libra", &Font12, colorSecond, colorMain);
+		//^logo
+	}
+
+	if (layer == 2) { //indexes
+		//										METER INDEX
+
+		if (showMeter == 1) {
+			Paint_DrawString_EN(meterX + 65, meterY + 2, "V", &Font16,
+					colorSecond, colorMain);
+			Paint_DrawString_EN(meterX + 56, meterY + 18, "Vd", &Font16,
+					colorSecond, colorMain);
+			Paint_DrawString_EN(meterX + 56, meterY + 34, "kR", &Font16,
+					colorSecond, colorMain);
+		}
+
+		//										DIGITAL INTERFACE INDEX
+
+		if (showDigitalInterface == 1) {
+			Paint_DrawString_EN(digitalX + 55, digitalY, "hPa", &Font12,
+					colorMain, colorSecond);
+			Paint_DrawString_EN(digitalX + 55, digitalY + 12, "%RH", &Font12,
+					colorMain, colorSecond);
+			Paint_DrawString_EN(digitalX + 42, digitalY + 24, "deg C", &Font12,
+					colorMain, colorSecond);
+		}
+
+		//										BAROMETER INDEX
+
+		if (showBarometer == 1) {
+			Paint_DrawNum(177, 102, 975, &Font8, colorSecond, colorMain);
+			Paint_DrawString_EN(177, 111, "hPa", &Font8, colorSecond,
+					colorMain);
+			Paint_DrawNum(102, 185, 1000, &Font8, colorSecond, colorMain);
+			Paint_DrawNum(5, 102, 1025, &Font8, colorSecond, colorMain);
+		}
+
+		//										HUMIDITY INDEX
+
+		if (showHigrometer == 1) {
+			for (uint8_t i = 0; i <= 50; i = i + 5) {
+				Paint_DrawLine(humidityX, humidityY + i, humidityX - 2,
+						humidityY + i, colorSecond, DOT_PIXEL_1X1,
+						LINE_STYLE_SOLID);
+			}
+
+			Paint_DrawString_EN(humidityX + 6, humidityY, "0%RH", &Font8,
+					colorSecond, colorMain);
+			Paint_DrawString_EN(humidityX + 6, humidityY + 43, "100", &Font8,
+					colorSecond, colorMain);
+		}
+
+
+
+		if (showNaviAnalog) {
+
+			//										ANALOG COMPASS ALTIMETER UNIT
+			Paint_DrawChar(compassX -4, compassY + 3, 'm', &Font12,
+								colorSecond, colorMain);
+
+
+
+			//										ANALOG COMPASS INDEX
+			//										BACKGROUD FOR COMPASS INDEX
+			Paint_DrawRectangle(compassX-3, compassY-30, compassX-3+8, compassY-30+12,
+					colorMain, DOT_PIXEL_1X1, DRAW_FILL_FULL);
+			Paint_DrawRectangle(compassX-3, compassY+19, compassX-3+8, compassY+19+12,
+								colorMain, DOT_PIXEL_1X1, DRAW_FILL_FULL);
+			Paint_DrawRectangle(compassX-28, compassY-5, compassX-28+8, compassY-5+12,
+								colorMain, DOT_PIXEL_1X1, DRAW_FILL_FULL);
+			Paint_DrawRectangle(compassX+20, compassY-5, compassX+20+8, compassY-5+12,
+								colorMain, DOT_PIXEL_1X1, DRAW_FILL_FULL);
+
+			//										INDEX
+			Paint_DrawChar(compassX - 3, compassY - 30, 'N', &Font12,
+					colorSecond, colorMain);
+			Paint_DrawChar(compassX - 3, compassY + 19, 'S', &Font12,
+					colorSecond, colorMain);
+			Paint_DrawChar(compassX - 28, compassY - 5, 'W', &Font12,
+					colorSecond, colorMain);
+			Paint_DrawChar(compassX + 20, compassY - 5, 'E', &Font12,
+					colorSecond, colorMain);
+
+		}
+
+		//										DIGITAL ALTIMETER UNIT
+		if (showNaviDigital == 1) {
+			Paint_DrawChar(compassX + 38, compassY + 31, 'm', &Font12,
+					colorSecond, colorMain);
+
+			//										DIGITAL COMPASS INDEX
+
+			Paint_DrawChar(compassX + 22, compassY + 1, 'N', &Font8,
+					colorSecond, colorMain);
+			Paint_DrawChar(compassX + 22, compassY + 20, 'S', &Font8,
+					colorSecond, colorMain);
+			Paint_DrawChar(compassX + 2, compassY + 11, 'W', &Font8,
+					colorSecond, colorMain);
+			Paint_DrawChar(compassX + 40, compassY + 11, 'E', &Font8,
+					colorSecond, colorMain);
+
+		}
+
+		//										BATTERY STATE INDEX
+
+		if (showBatteryState == 1) {
+			Paint_DrawLine(batteryStateStartX + batteryPointerShift,
+					batteryStateStartY,
+					batteryStateStartX + batteryPointerShift
+							+ batteryStateIndexLength, batteryStateStartY,
+					colorSecond, DOT_PIXEL_2X2, LINE_STYLE_SOLID);
+			Paint_DrawLine(batteryStateStartX,
+					batteryStateStartY + batteryPointerShift,
+					batteryStateStartX,
+					batteryStateStartY + batteryPointerShift
+							+ batteryStateIndexLength, colorSecond,
+					DOT_PIXEL_2X2, LINE_STYLE_SOLID);
+		}
+
+		//										TEMPERATURE UNIT
+
+		if (showThermometer == 1) {
+			Paint_DrawCircle(temperatureX + 21, temperatureY + 4, 2, colorMain,
+					DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
+			Paint_DrawString_EN(temperatureX + 24, temperatureY, "C", &Font12,
+					colorMain, colorSecond);
+		}
+
+		//										CHRONO DECIMALS INDEX
+
+		if (showChrono == 1) {
+			for (uint8_t i = 0; i < 10; i++) {
+
+				Paint_DrawLine(
+						cos(chronoDecimalsIndexAngle[i])
+								* (smallBoardRadius - chronoDecimalsIndexLength)
+								+ chronoDecimalsStartX,
+						sin(chronoDecimalsIndexAngle[i])
+								* (smallBoardRadius - chronoDecimalsIndexLength)
+								+ chronoDecimalsStartY,
+
+						cos(chronoDecimalsIndexAngle[i]) * (smallBoardRadius)
+								+ chronoDecimalsStartX,
+						sin(chronoDecimalsIndexAngle[i]) * (smallBoardRadius)
+								+ chronoDecimalsStartY, colorMain,
+						DOT_PIXEL_1X1, LINE_STYLE_SOLID);
+
+			}
+
+			//										CHRONO DECIMALS DIGITS
+			Paint_DrawString_EN(chronoDecimalsStartX - 4,
+					chronoDecimalsStartY - 24, "0", &Font12, colorMain,
+					colorSecond);
+			Paint_DrawString_EN(chronoDecimalsStartX + 12,
+					chronoDecimalsStartY - 12, "2", &Font12, colorMain,
+					colorSecond);
+			Paint_DrawString_EN(chronoDecimalsStartX + 6,
+					chronoDecimalsStartY + 6, "4", &Font12, colorMain,
+					colorSecond);
+			Paint_DrawString_EN(chronoDecimalsStartX - 14,
+					chronoDecimalsStartY + 6, "6", &Font12, colorMain,
+					colorSecond);
+			Paint_DrawString_EN(chronoDecimalsStartX - 18,
+					chronoDecimalsStartY - 12, "8", &Font12, colorMain,
+					colorSecond);
+
+			//										CHRONO MINUTES INDEX
+			for (uint8_t i = 0; i < 30; i++) {
+
 				Paint_DrawLine(
 						cos(chronoMinutesIndexAngle[i])
-								* (smallBoardRadius
-										- (chronoMinutesIndexLength + 5))
+								* (smallBoardRadius - chronoMinutesIndexLength)
 								+ chronoMinutesStartX,
 						sin(chronoMinutesIndexAngle[i])
-								* (smallBoardRadius
-										- (chronoMinutesIndexLength + 5))
+								* (smallBoardRadius - chronoMinutesIndexLength)
 								+ chronoMinutesStartY,
 
 						cos(chronoMinutesIndexAngle[i]) * (smallBoardRadius)
@@ -704,45 +877,50 @@ void interfaceDrawIndex() {
 						sin(chronoMinutesIndexAngle[i]) * (smallBoardRadius)
 								+ chronoMinutesStartY, colorMain, DOT_PIXEL_1X1,
 						LINE_STYLE_SOLID);
+
+				if (i % 5 == 0) {
+					Paint_DrawLine(
+							cos(chronoMinutesIndexAngle[i])
+									* (smallBoardRadius
+											- (chronoMinutesIndexLength + 5))
+									+ chronoMinutesStartX,
+							sin(chronoMinutesIndexAngle[i])
+									* (smallBoardRadius
+											- (chronoMinutesIndexLength + 5))
+									+ chronoMinutesStartY,
+
+							cos(chronoMinutesIndexAngle[i]) * (smallBoardRadius)
+									+ chronoMinutesStartX,
+							sin(chronoMinutesIndexAngle[i]) * (smallBoardRadius)
+									+ chronoMinutesStartY, colorMain,
+							DOT_PIXEL_1X1, LINE_STYLE_SOLID);
+				}
 			}
+
+			//										CHRONO MINUTES DIGITS
+
+			Paint_DrawString_EN(chronoMinutesStartX - 8,
+					chronoMinutesStartY - 20, "30", &Font12, colorMain,
+					colorSecond);
+			Paint_DrawString_EN(chronoMinutesStartX + 2,
+					chronoMinutesStartY + 2, "10", &Font12, colorMain,
+					colorSecond);
+			Paint_DrawString_EN(chronoMinutesStartX - 18,
+					chronoMinutesStartY + 2, "20", &Font12, colorMain,
+					colorSecond);
 		}
 
-		//										CHRONO MINUTES DIGITS
+		//										SECONDS INDEX
 
-		Paint_DrawString_EN(chronoMinutesStartX - 8, chronoMinutesStartY - 20,
-				"30", &Font12, colorMain, colorSecond);
-		Paint_DrawString_EN(chronoMinutesStartX + 2, chronoMinutesStartY + 2,
-				"10", &Font12, colorMain, colorSecond);
-		Paint_DrawString_EN(chronoMinutesStartX - 18, chronoMinutesStartY + 2,
-				"20", &Font12, colorMain, colorSecond);
-	}
+		if (showSeconds == 1) {
+			for (uint8_t i = 0; i < 12; i++) {
 
-	//										SECONDS INDEX
-
-	if (showSeconds == 1) {
-		for (uint8_t i = 0; i < 12; i++) {
-
-			Paint_DrawLine(
-					cos(secondsIndexAngle[i])
-							* (smallBoardRadius - secondsIndexLength)
-							+ secondsStartX,
-					sin(secondsIndexAngle[i])
-							* (smallBoardRadius - secondsIndexLength)
-							+ secondsStartY,
-
-					cos(secondsIndexAngle[i]) * (smallBoardRadius)
-							+ secondsStartX,
-					sin(secondsIndexAngle[i]) * (smallBoardRadius)
-							+ secondsStartY, colorMain, DOT_PIXEL_1X1,
-					LINE_STYLE_SOLID);
-
-			if (i % 3 == 0) {
 				Paint_DrawLine(
 						cos(secondsIndexAngle[i])
-								* (smallBoardRadius - (secondsIndexLength + 5))
+								* (smallBoardRadius - secondsIndexLength)
 								+ secondsStartX,
 						sin(secondsIndexAngle[i])
-								* (smallBoardRadius - (secondsIndexLength + 5))
+								* (smallBoardRadius - secondsIndexLength)
 								+ secondsStartY,
 
 						cos(secondsIndexAngle[i]) * (smallBoardRadius)
@@ -750,296 +928,312 @@ void interfaceDrawIndex() {
 						sin(secondsIndexAngle[i]) * (smallBoardRadius)
 								+ secondsStartY, colorMain, DOT_PIXEL_1X1,
 						LINE_STYLE_SOLID);
+
+				if (i % 3 == 0) {
+					Paint_DrawLine(
+							cos(secondsIndexAngle[i])
+									* (smallBoardRadius
+											- (secondsIndexLength + 5))
+									+ secondsStartX,
+							sin(secondsIndexAngle[i])
+									* (smallBoardRadius
+											- (secondsIndexLength + 5))
+									+ secondsStartY,
+
+							cos(secondsIndexAngle[i]) * (smallBoardRadius)
+									+ secondsStartX,
+							sin(secondsIndexAngle[i]) * (smallBoardRadius)
+									+ secondsStartY, colorMain, DOT_PIXEL_1X1,
+							LINE_STYLE_SOLID);
+				}
+			}
+
+			//										SECONDS DIGITS
+
+			Paint_DrawString_EN(secondsStartX - 8, secondsStartY - 20, "60",
+					&Font12, colorMain, colorSecond);
+			Paint_DrawString_EN(secondsStartX + 2, secondsStartY + 2, "20",
+					&Font12, colorMain, colorSecond);
+			Paint_DrawString_EN(secondsStartX - 18, secondsStartY + 2, "40",
+					&Font12, colorMain, colorSecond);
+
+		}
+
+		//										MAIN INDEX
+
+		for (uint8_t i = 1; i < 12; i++) {
+
+			Paint_DrawLine(
+					cos(mainIndexAngle[i]) * (mainBoardRadius - mainIndexLength)
+							+ mainStartX,
+					sin(mainIndexAngle[i]) * (mainBoardRadius - mainIndexLength)
+							+ mainStartY,
+
+					cos(mainIndexAngle[i]) * (mainBoardRadius) + mainStartX,
+					sin(mainIndexAngle[i]) * (mainBoardRadius) + mainStartY,
+					colorSecond, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
+
+		}
+
+	}
+
+	if (layer == 3) {		//pointers
+
+		//										METER
+
+		if (showMeter == 1) {
+			Paint_DrawString_EN(meterX + 2, meterY + 2, voltagePassive, &Font16,
+					colorSecond, colorMain);
+
+			Paint_DrawString_EN(meterX + 2, meterY + 18, voltageDrop, &Font16,
+					colorSecond, colorMain);
+
+			Paint_DrawString_EN(meterX + 2, meterY + 34, resistance, &Font16,
+					colorSecond, colorMain);
+
+		}
+
+		//										DIGITAL INTERFACE
+
+		if (showDigitalInterface == 1) {
+			Paint_DrawNum(digitalX, digitalY, pressureValue, &Font12, colorMain,
+					colorSecond);
+			Paint_DrawNum(digitalX, digitalY + 12, humidityValue, &Font12,
+					colorMain, colorSecond);
+
+			if (temperatureValue < 0) {
+
+				Paint_DrawChar(digitalX, digitalY + 24, '-', &Font12, colorMain,
+						colorSecond);
+				Paint_DrawNum(digitalX + 8, digitalY + 24,
+						abs(temperatureValue), &Font12, colorMain, colorSecond);
+			} else {
+				Paint_DrawNum(digitalX, digitalY + 24, temperatureValue,
+						&Font12, colorMain, colorSecond);
+			}
+
+		}
+
+		//										TEMPERATURE READING
+
+		if (showThermometer == 1) {
+			if (temperatureValue < 0) {
+
+				Paint_DrawChar(temperatureX - 8, temperatureY, '-', &Font12,
+						colorMain, colorSecond);
+				Paint_DrawNum(temperatureX, temperatureY, abs(temperatureValue),
+						&Font12, colorMain, colorSecond);
+			} else {
+				Paint_DrawNum(temperatureX, temperatureY, temperatureValue,
+						&Font12, colorMain, colorSecond);
 			}
 		}
 
-		//										SECONDS DIGITS
+		//										HUMIDITY READING
 
-		Paint_DrawString_EN(secondsStartX - 8, secondsStartY - 20, "60",
-				&Font12, colorMain, colorSecond);
-		Paint_DrawString_EN(secondsStartX + 2, secondsStartY + 2, "20", &Font12,
-				colorMain, colorSecond);
-		Paint_DrawString_EN(secondsStartX - 18, secondsStartY + 2, "40",
-				&Font12, colorMain, colorSecond);
-
-	}
-
-	//										MAIN INDEX
-
-	for (uint8_t i = 1; i < 12; i++) {
-
-		Paint_DrawLine(
-				cos(mainIndexAngle[i]) * (mainBoardRadius - mainIndexLength)
-						+ mainStartX,
-				sin(mainIndexAngle[i]) * (mainBoardRadius - mainIndexLength)
-						+ mainStartY,
-
-				cos(mainIndexAngle[i]) * (mainBoardRadius) + mainStartX,
-				sin(mainIndexAngle[i]) * (mainBoardRadius) + mainStartY,
-				colorSecond, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-
-	}
-
-}
-
-void interfaceDrawPointers() {
-
-	//										COUNT ANGLES
-
-	hourAngle = 2 * 3.14 / 60 * ((hours12 * 5 + (minutes / 10)) - 15);
-	minuteAngle = 2 * 3.14 / 60 * (minutes - 15);
-	secondAngle = 2 * 3.14 / 60 * (seconds - 15);
-
-	batteryStateAngle = 2 * 3.14 / 28 * (batteryState);
-
-	chronoMinutesAngle = 2 * 3.14 / 30 * (chronoMinutes - 7.5);
-	chronoSecondsAngle = 2 * 3.14 / 60 * (chronoSeconds - 15);
-	chronoDecimalsAngle = 2 * 3.14 / 10 * (chronoDecimals - 2.5);
-	pressureAngle = 2 * 3.14 / 100 * (pressureValue - 950 - 25);
-
-	//										LOCK INDICATOR
-	if (flagLocked == LOCKED) {
-		Paint_DrawCircle(mainStartX, mainStartY, 10, colorSecond, DOT_PIXEL_2X2,
-				DRAW_FILL_EMPTY);
-	}
-
-	//										METER
-
-	if (showMeter == 1) {
-		Paint_DrawString_EN(meterX + 2, meterY + 2, voltagePassive, &Font16,
-				colorSecond, colorMain);
-
-		Paint_DrawString_EN(meterX + 2, meterY + 18, voltageDrop, &Font16,
-				colorSecond, colorMain);
-
-		Paint_DrawString_EN(meterX + 2, meterY + 34, resistance, &Font16,
-				colorSecond, colorMain);
-
-	}
-
-	//										DIGITAL INTERFACE
-
-	if (showDigitalInterface == 1) {
-		Paint_DrawNum(digitalX, digitalY, pressureValue, &Font12, colorMain,
-				colorSecond);
-		Paint_DrawNum(digitalX, digitalY + 12, humidityValue, &Font12,
-				colorMain, colorSecond);
-
-		if (temperatureValue < 0) {
-
-			Paint_DrawChar(digitalX, digitalY + 24, '-', &Font12, colorMain,
-					colorSecond);
-			Paint_DrawNum(digitalX + 8, digitalY + 24, abs(temperatureValue),
-					&Font12, colorMain, colorSecond);
-		} else {
-			Paint_DrawNum(digitalX, digitalY + 24, temperatureValue, &Font12,
-					colorMain, colorSecond);
+		if (showHigrometer == 1) {
+			Paint_DrawRectangle(humidityX, humidityY, humidityX + 5,
+					humidityY + (humidityValue / 2), colorSecond, DOT_PIXEL_1X1,
+					DRAW_FILL_FULL);
 		}
 
-	}
+		//										ANALOG COMPASS
 
-	//										TEMPERATURE READING
+		if (showNaviAnalog == 1) {
 
-	if (showThermometer == 1) {
-		if (temperatureValue < 0) {
+			if (altitudeValue < 0) {
+				Paint_DrawChar(compassX - 12, compassY - 14, '-', &Font12,
+						colorSecond, colorMain);
+				Paint_DrawNum(compassX - 12 + 8, compassY - 14,
+						abs(altitudeValue), &Font12, colorSecond, colorMain);
+			} else {
+				Paint_DrawNum(compassX - 12, compassY - 14, altitudeValue,
+						&Font12, colorSecond, colorMain);
+			}
 
-			Paint_DrawChar(temperatureX - 8, temperatureY, '-', &Font12,
-					colorMain, colorSecond);
-			Paint_DrawNum(temperatureX, temperatureY, abs(temperatureValue),
-					&Font12, colorMain, colorSecond);
-		} else {
-			Paint_DrawNum(temperatureX, temperatureY, temperatureValue, &Font12,
-					colorMain, colorSecond);
-		}
-	}
+			compassAngle = atan2(magneticFieldY, magneticFieldX);
 
-	//										HUMIDITY READING
-
-	if (showHigrometer == 1) {
-		Paint_DrawRectangle(humidityX, humidityY, humidityX + 5,
-				humidityY + (humidityValue / 2), colorSecond, DOT_PIXEL_1X1,
-				DRAW_FILL_FULL);
-	}
-
-	//										ALTITUDE READING
-
-	if (showNavi == 1) {
-		if (altitudeValue < 0) {
-			Paint_DrawChar(compassX, compassY + 31, '-', &Font12, colorSecond,
-					colorMain);
-			Paint_DrawNum(compassX + 8, compassY + 31, abs(altitudeValue),
-					&Font12, colorSecond, colorMain);
-		} else {
-			Paint_DrawNum(compassX, compassY + 31, altitudeValue, &Font12,
-					colorSecond, colorMain);
-		}
-	}
-
-	//										MAGNETOMETER READING
-
-	if (showNavi == 1) {
-
-		uint16_t compassCenterX = compassX + 24;
-		uint16_t compassCenterY = compassY + 14;
-
-		Paint_DrawPoint(compassCenterX + magneticFieldX,
-				compassCenterY + magneticFieldY, colorSecond, DOT_PIXEL_3X3,
-				DOT_STYLE_DFT);
-
-		Paint_DrawLine(compassX, compassCenterY + magneticFieldY, compassX + 48,
-				compassCenterY + magneticFieldY, colorSecond, DOT_PIXEL_1X1,
-				LINE_STYLE_SOLID);
-
-		Paint_DrawLine(compassCenterX + magneticFieldX, compassY,
-				compassCenterX + magneticFieldX, compassY + 29, colorSecond,
-				DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-
-	}
-
-	//										PRESSURE POINTER
-
-	if (showBarometer == 1) {
-		Paint_DrawLine((cos(pressureAngle) * pressurePointerShift) + mainStartX,
-				(sin(pressureAngle) * pressurePointerShift) + mainStartY,
-				(cos(pressureAngle) * pressurePointerLength) + mainStartX,
-				(sin(pressureAngle) * pressurePointerLength) + mainStartY,
-				colorSecond, DOT_PIXEL_2X2, LINE_STYLE_SOLID);
-		Paint_DrawCircle(
-				(cos(pressureAngle) * pressurePointerShift) + mainStartX,
-				(sin(pressureAngle) * pressurePointerShift) + mainStartY, 4,
-				colorSecond, DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
-		//^ pointer
-	}
-
-	//										BATTERY STATE POINTER
-
-	if (showBatteryState) {
-		for (uint8_t i = batteryState; i <= 7; i++) {
-			batteryStateAngle = 2 * 3.14 / 28 * (i);
-
-			Paint_DrawLine(
-					(cos(batteryStateAngle) * batteryPointerShift)
-							+ batteryStateStartX,
-					(sin(batteryStateAngle) * batteryPointerShift)
-							+ batteryStateStartY,
-					(cos(batteryStateAngle) * batteryStatePointerLength)
-							+ batteryStateStartX,
-					(sin(batteryStateAngle) * batteryStatePointerLength)
-							+ batteryStateStartY, colorSecond, DOT_PIXEL_1X1,
+			Paint_DrawPointer(compassX, compassY, compassAngle,
+					compassPointerLength, 0, colorSecond, DOT_PIXEL_2X2,
+					LINE_STYLE_SOLID);
+			Paint_DrawPointer(compassX, compassY, compassAngle + 3.14,
+					compassPointerLength, 0, colorSecond, DOT_PIXEL_1X1,
 					LINE_STYLE_SOLID);
 
 		}
 
-		Paint_DrawLine(
-				(cos(batteryStateAngle) * batteryPointerShift)
-						+ batteryStateStartX,
-				(sin(batteryStateAngle) * batteryPointerShift)
-						+ batteryStateStartY,
-				(cos(batteryStateAngle) * batteryStatePointerLength)
-						+ batteryStateStartX,
-				(sin(batteryStateAngle) * batteryStatePointerLength)
-						+ batteryStateStartY, colorSecond, DOT_PIXEL_1X1,
+		//										DIGITAL COMPASS - ALT
+
+		if (showNaviDigital == 1) {
+			if (altitudeValue < 0) {
+				Paint_DrawChar(compassX, compassY + 31, '-', &Font12,
+						colorSecond, colorMain);
+				Paint_DrawNum(compassX + 8, compassY + 31, abs(altitudeValue),
+						&Font12, colorSecond, colorMain);
+			} else {
+				Paint_DrawNum(compassX, compassY + 31, altitudeValue, &Font12,
+						colorSecond, colorMain);
+			}
+
+			//										DIGITAL COMPASS - COMPASS
+
+			uint16_t compassCenterX = compassX + 24;
+			uint16_t compassCenterY = compassY + 14;
+
+			Paint_DrawPoint(compassCenterX + magneticFieldX,
+					compassCenterY + magneticFieldY, colorSecond, DOT_PIXEL_3X3,
+					DOT_STYLE_DFT);
+
+			Paint_DrawLine(compassX, compassCenterY + magneticFieldY,
+					compassX + 48, compassCenterY + magneticFieldY, colorSecond,
+					DOT_PIXEL_1X1, LINE_STYLE_SOLID);
+
+			Paint_DrawLine(compassCenterX + magneticFieldX, compassY,
+					compassCenterX + magneticFieldX, compassY + 29, colorSecond,
+					DOT_PIXEL_1X1, LINE_STYLE_SOLID);
+
+		}
+
+		//										PRESSURE POINTER
+
+		if (showBarometer == 1) {
+
+			pressureAngle = 2 * 3.14 / 100
+					* ((int32_t) pressureValue - 950 - 25);
+
+			Paint_DrawPointer(mainStartX, mainStartY, pressureAngle,
+					pressurePointerLength, pressurePointerShift, colorSecond,
+					DOT_PIXEL_2X2, LINE_STYLE_SOLID);
+
+			Paint_DrawCircle(
+					(cos(pressureAngle) * pressurePointerShift) + mainStartX,
+					(sin(pressureAngle) * pressurePointerShift) + mainStartY, 4,
+					colorSecond, DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
+			//^ pointer
+		}
+
+		//										BATTERY STATE POINTER
+
+		batteryStateAngle = 2 * 3.14 / 28 * (batteryState);
+
+		if (showBatteryState) {
+			for (uint8_t i = batteryState; i <= 7; i++) {
+				batteryStateAngle = 2 * 3.14 / 28 * (i);
+
+				Paint_DrawPointer(batteryStateStartX, batteryStateStartY,
+						batteryStateAngle, batteryStatePointerLength,
+						batteryPointerShift, colorSecond, DOT_PIXEL_1X1,
+						LINE_STYLE_SOLID);
+
+			}
+
+		}
+
+		//										HOUR POINTER
+
+		hourAngle = 2 * 3.14 / 60 * ((hours12 * 5 + (minutes / 10)) - 15);
+
+		Paint_DrawPointer(mainStartX + pointerShadowShift,
+				mainStartY + pointerShadowShift, hourAngle, hourPointerLength,
+				10, colorMain, DOT_PIXEL_3X3, LINE_STYLE_SOLID);
+		//^shadow
+
+		Paint_DrawPointer(mainStartX, mainStartY, hourAngle, hourPointerLength,
+				10, colorSecond, DOT_PIXEL_3X3, LINE_STYLE_SOLID);
+		//^ pointer
+
+		//										MINUTE POINTER
+
+		minuteAngle = 2 * 3.14 / 60 * (minutes - 15);
+
+		Paint_DrawPointer(mainStartX + pointerShadowShift,
+				mainStartY + pointerShadowShift, minuteAngle,
+				minutePointerLength, 10, colorMain, DOT_PIXEL_2X2,
 				LINE_STYLE_SOLID);
-	}
+		//^shadow
 
-	//										HOUR POINTER
-
-	Paint_DrawLine(mainStartX + pointerShadowShift,
-			mainStartY + pointerShadowShift,
-			(cos(hourAngle) * hourPointerLength) + mainStartX
-					+ pointerShadowShift,
-			(sin(hourAngle) * hourPointerLength) + mainStartY
-					+ pointerShadowShift, colorMain, DOT_PIXEL_3X3,
-			LINE_STYLE_SOLID);
-	//^shadow
-
-	Paint_DrawLine(mainStartX, mainStartY,
-			(cos(hourAngle) * hourPointerLength) + mainStartX,
-			(sin(hourAngle) * hourPointerLength) + mainStartY, colorSecond,
-			DOT_PIXEL_3X3, LINE_STYLE_SOLID);
-	//^ pointer
-
-	//										MINUTE POINTER
-	Paint_DrawLine(mainStartX + pointerShadowShift,
-			mainStartY + pointerShadowShift,
-			(cos(minuteAngle) * minutePointerLength) + mainStartX
-					+ pointerShadowShift,
-			(sin(minuteAngle) * minutePointerLength) + mainStartY
-					+ pointerShadowShift, colorMain, DOT_PIXEL_2X2,
-			LINE_STYLE_SOLID);
-	//^shadow
-
-	Paint_DrawLine(mainStartX, mainStartY,
-			(cos(minuteAngle) * minutePointerLength) + mainStartX,
-			(sin(minuteAngle) * minutePointerLength) + mainStartY, colorSecond,
-			DOT_PIXEL_2X2, LINE_STYLE_SOLID);
-	//^ pointer
-
-	//										CHRONO MINUTE POINTER
-
-	if (showChrono == 1) {
-		Paint_DrawLine(chronoMinutesStartX, chronoMinutesStartY,
-				(cos(chronoMinutesAngle) * chronoMinutesPointerLength)
-						+ chronoMinutesStartX,
-				(sin(chronoMinutesAngle) * chronoMinutesPointerLength)
-						+ chronoMinutesStartY, colorMain, DOT_PIXEL_1X1,
+		Paint_DrawPointer(mainStartX, mainStartY, minuteAngle,
+				minutePointerLength, 10, colorSecond, DOT_PIXEL_2X2,
 				LINE_STYLE_SOLID);
+		//^ pointer
 
-		//										CHRONO HALF HOURS DOTS
+		//										CHRONO MINUTE POINTER
 
-		for (uint8_t halfHours = (chronoHours * 2) + (chronoMinutes / 30);
-				halfHours > 0; halfHours--) {
-			Paint_DrawPoint(
-					chronoMinutesStartX - chronoMinutesPointerLength
-							+ (halfHours * 4), chronoMinutesStartY - 5,
-					colorMain, DOT_PIXEL_2X2, DOT_STYLE_DFT);
-		};
+		if (showChrono == 1) {
 
-	}
+			chronoMinutesAngle = 2 * 3.14 / 30 * (chronoMinutes - 7.5);
 
-	//										SECONDS POINTER
+			Paint_DrawPointer(chronoMinutesStartX, chronoMinutesStartY,
+					chronoMinutesAngle, chronoMinutesPointerLength, 0,
+					colorMain, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
 
-	if (showSeconds == 1) {
-		Paint_DrawLine(secondsStartX, secondsStartY,
-				(cos(secondAngle) * secondPointerLength) + secondsStartX,
-				(sin(secondAngle) * secondPointerLength) + secondsStartY,
-				colorMain, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-		//^pointer
-	}
+			//										CHRONO HALF HOURS DOTS
 
-	//										CHRONO SECOND POINTER
+			for (uint8_t halfHours = (chronoHours * 2) + (chronoMinutes / 30);
+					halfHours > 0; halfHours--) {
+				Paint_DrawPoint(
+						chronoMinutesStartX - chronoMinutesPointerLength
+								+ (halfHours * 4), chronoMinutesStartY - 5,
+						colorMain, DOT_PIXEL_2X2, DOT_STYLE_DFT);
+			};
 
-	if (showChrono == 1) {
-		Paint_DrawLine(mainStartX, mainStartY,
-				(cos(chronoSecondsAngle) * chronoSecondsPointerLength)
-						+ mainStartX,
-				(sin(chronoSecondsAngle) * chronoSecondsPointerLength)
-						+ mainStartY, colorSecond, DOT_PIXEL_1X1,
-				LINE_STYLE_SOLID);
-		Paint_DrawLine(mainStartX + pointerShadowShift,
-				mainStartY + pointerShadowShift,
-				(cos(chronoSecondsAngle) * chronoSecondsPointerLength)
-						+ mainStartX + pointerShadowShift,
-				(sin(chronoSecondsAngle) * chronoSecondsPointerLength)
-						+ mainStartY + pointerShadowShift, colorMain,
-				DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-	}
+		}
 
-	//										CHRONO DECIMAL POINTER
+		//										SECONDS POINTER
 
-	if (showChrono == 1) {
-		Paint_DrawLine(chronoDecimalsStartX, chronoDecimalsStartY,
-				(cos(chronoDecimalsAngle) * chronoDecimalsPointerLength)
-						+ chronoDecimalsStartX,
-				(sin(chronoDecimalsAngle) * chronoDecimalsPointerLength)
-						+ chronoDecimalsStartY, colorMain, DOT_PIXEL_1X1,
-				LINE_STYLE_SOLID);
-	}
+		secondAngle = 2 * 3.14 / 60 * (seconds - 15);
 
-	//										DATE
+		if (showSeconds == 1) {
+			Paint_DrawPointer(secondsStartX, secondsStartY, secondAngle,
+					secondPointerLength, 0, colorMain, DOT_PIXEL_1X1,
+					LINE_STYLE_SOLID);
+			//^pointer
+		}
 
-	if (showDate == 1) {
-		Paint_DrawNum(dateX, dateY, day, &Font12, colorSecond, colorMain); //date
+		//										CHRONO SECOND POINTER
+
+		if (showChrono == 1) {
+
+			chronoSecondsAngle = 2 * 3.14 / 60 * (chronoSeconds - 15);
+
+			Paint_DrawPointer(mainStartX, mainStartY, chronoSecondsAngle,
+					chronoSecondsPointerLength, 10, colorSecond, DOT_PIXEL_1X1,
+					LINE_STYLE_SOLID);
+			//^ pointer
+
+			Paint_DrawPointer(mainStartX + pointerShadowShift,
+					mainStartY + pointerShadowShift, chronoSecondsAngle,
+					chronoSecondsPointerLength, 10, colorMain, DOT_PIXEL_1X1,
+					LINE_STYLE_SOLID);
+			//^shadow
+		}
+
+		//										CHRONO DECIMAL POINTER
+
+		if (showChrono == 1) {
+
+			chronoDecimalsAngle = 2 * 3.14 / 10 * (chronoDecimals - 2.5);
+
+			Paint_DrawPointer(chronoDecimalsStartX, chronoDecimalsStartY,
+					chronoDecimalsAngle, chronoDecimalsPointerLength, 0,
+					colorMain, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
+		}
+
+		//										DATE
+
+		if (showDate == 1) {
+			Paint_DrawNum(dateX, dateY, day, &Font12, colorSecond, colorMain); //date
+		}
+
+		//										LOCK INDICATOR
+		if (flagLocked == LOCKED) {
+			Paint_DrawCircle(mainStartX, mainStartY, 10, colorSecond,
+					DOT_PIXEL_2X2, DRAW_FILL_FULL);
+		} else {
+			Paint_DrawCircle(mainStartX, mainStartY, 10, colorSecond,
+					DOT_PIXEL_2X2, DRAW_FILL_EMPTY);
+		}
+
 	}
 
 }
@@ -1048,123 +1242,3 @@ void interfaceDrawBatteryWarning() {
 	Paint_DrawString_EN(105, 90, "CHARGE", &Font16, colorSecond, colorMain);
 }
 
-void interfaceDrawBoards() {
-
-	//										MOON PHASE
-
-	if (showMoonPhase == 1) {
-
-//		moonPhase = 51;
-
-		Paint_DrawCircle(moonPhaseX, moonPhaseY, moonPhaseRadius, colorSecond,
-				DOT_PIXEL_1X1, DRAW_FILL_FULL);
-
-		float moonPhaseShift;
-
-		if (moonPhase < 50) {
-
-			moonPhaseShift = ((float) moonPhase / 25) * moonPhaseRadius;
-			Paint_DrawCircle(moonPhaseX - (uint32_t) moonPhaseShift, moonPhaseY,
-					moonPhaseRadius, colorMain, DOT_PIXEL_1X1, DRAW_FILL_FULL);
-
-		} else if (moonPhase > 50) {
-			moonPhase = 100 - moonPhase;
-
-			moonPhaseShift = ((float) moonPhase / 25) * moonPhaseRadius;
-			Paint_DrawCircle(moonPhaseX + (uint32_t) moonPhaseShift, moonPhaseY,
-					moonPhaseRadius, colorMain, DOT_PIXEL_1X1, DRAW_FILL_FULL);
-
-		}
-
-	}
-
-	//										METER
-
-	if (showMeter == 1) {
-		Paint_DrawRectangle(meterX, meterY, meterX + 82, meterY + 52,
-				colorSecond, DOT_PIXEL_2X2, DRAW_FILL_EMPTY);
-	}
-
-	//										DIGITAL INTERFACE FIELD
-
-	if (showDigitalInterface == 1) {
-		Paint_DrawRectangle(digitalX, digitalY, digitalX + 80, digitalY + 37,
-				colorSecond, DOT_PIXEL_1X1, DRAW_FILL_FULL);
-
-	}
-
-	//										TEMPERATURE FIELD
-
-	if (showThermometer == 1) {
-		Paint_DrawRectangle(temperatureX - 7, temperatureY, temperatureX + 34,
-				temperatureY + 12, colorSecond, DOT_PIXEL_2X2, DRAW_FILL_FULL); // date window
-	}
-
-	//										HUMIDITY BAR FIELD
-
-	if (showHigrometer == 1) {
-		Paint_DrawRectangle(humidityX, humidityY, humidityX + 5, humidityY + 50,
-				colorSecond, DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
-	}
-
-	//										COMPASS
-	if (showNavi == 1) {
-		Paint_DrawRectangle(compassX, compassY, compassX + 48, compassY + 44,
-				colorSecond, DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
-		Paint_DrawLine(compassX, compassY + 29, compassX + 48, compassY + 29,
-				colorSecond, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-	}
-
-	//										MAIN BOARD
-
-	Paint_DrawCircle(100, 100, mainBoardRadius, colorSecond, DOT_PIXEL_1X1,
-			DRAW_FILL_EMPTY); //main
-
-	//										CHRONO DECIMALS BOARD
-
-	if (showChrono == 1) {
-		Paint_DrawCircle(chronoDecimalsStartX, chronoDecimalsStartY,
-				smallBoardRadius + 2, colorSecond, DOT_PIXEL_1X1,
-				DRAW_FILL_EMPTY);
-		Paint_DrawCircle(chronoDecimalsStartX, chronoDecimalsStartY,
-				smallBoardRadius, colorSecond, DOT_PIXEL_1X1, DRAW_FILL_FULL); //chrono decimals
-
-		//										CHRONO MINUTES BOARD
-
-		Paint_DrawCircle(chronoMinutesStartX, chronoMinutesStartY,
-				smallBoardRadius + 2, colorSecond, DOT_PIXEL_1X1,
-				DRAW_FILL_EMPTY);
-		Paint_DrawCircle(chronoMinutesStartX, chronoMinutesStartY,
-				smallBoardRadius, colorSecond, DOT_PIXEL_1X1, DRAW_FILL_FULL); //chrono minutes
-	}
-
-	//										SECONDS BOARD
-
-	if (showSeconds == 1) {
-		Paint_DrawCircle(secondsStartX, secondsStartY, smallBoardRadius + 2,
-				colorSecond, DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
-		Paint_DrawCircle(secondsStartX, secondsStartY, smallBoardRadius,
-				colorSecond, DOT_PIXEL_1X1, DRAW_FILL_FULL); //seconds
-	}
-
-	//										DATE WINDOW
-	if (showDate == 1) {
-		Paint_DrawRectangle(dateX - 3, dateY - 3, dateX + 17, dateY + 14,
-				colorSecond, DOT_PIXEL_2X2, DRAW_FILL_EMPTY); // date window
-	}
-
-	//										DOTS
-
-	if (showChrono == 1) {
-		Paint_DrawCircle(chronoDecimalsStartX, chronoDecimalsStartY, 2,
-				colorMain, DOT_PIXEL_1X1, DRAW_FILL_FULL);
-		Paint_DrawCircle(chronoMinutesStartX, chronoMinutesStartY, 2, colorMain,
-				DOT_PIXEL_1X1, DRAW_FILL_FULL);
-		Paint_DrawCircle(secondsStartX, secondsStartY, 2, colorMain,
-				DOT_PIXEL_1X1, DRAW_FILL_FULL);
-	}
-
-	Paint_DrawString_EN(82, 7, "libra", &Font12, colorSecond, colorMain);
-//^logo
-
-}

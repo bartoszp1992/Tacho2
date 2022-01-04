@@ -13,7 +13,7 @@ uint8_t ctrlMagnetometerContinous = LIS3MDL_MODE_CONTINOUS;
 
 //								BATTERY LEVELS AND FLAGS
 
-uint16_t batteryLevels[] = { 3600, 3750, 3800, 3850, 3950, 4020, 4110 };
+uint16_t batteryLevels[] = { 3750, 3800, 3900, 3950, 4000, 4050, 4100 };
 uint8_t batteryLowFlag = 0;
 
 uint8_t i2cTimeout = 200;
@@ -21,7 +21,6 @@ uint8_t i2cTimeout = 200;
 //								DATA MODIFICATORS
 volatile int8_t temperatureCompensation = -7;
 volatile int16_t pressureReference = 1026;
-
 
 int32_t offsetADC = -75;
 int32_t offsetMagnetometerX = 0;
@@ -123,7 +122,8 @@ void sensingRead(void) {
 
 	memset(voltagePassive, 0, 5);
 	if (adcReading[1] > 100) {
-		voltagePassiveRaw = ((((3.3 * ((float) adcReading[1] +offsetADC)) / 4095) * 40)) * gainVoltagePassive;
+		voltagePassiveRaw = ((((3.3 * ((float) adcReading[1] + offsetADC))
+				/ 4095) * 40)) * gainVoltagePassive;
 	} else {
 		voltagePassiveRaw = 0;
 	}
@@ -136,7 +136,7 @@ void sensingRead(void) {
 
 	memset(voltageDrop, 0, 5);
 	if (adcReading[2] < 3200) {
-		voltageDropRaw = ((3.3 * ((float) adcReading[2] +offsetADC)) / 4095);
+		voltageDropRaw = ((3.3 * ((float) adcReading[2] + offsetADC)) / 4095);
 
 //		voltageDropRaw = voltageDropRaw - 0.59; //offset correction
 
@@ -152,7 +152,7 @@ void sensingRead(void) {
 
 	memset(resistance, 0, 5);
 	currentRaw = (3.3 - voltageDropRaw) / 10000;
-	resistanceRaw = (voltageDropRaw / currentRaw)/1000;
+	resistanceRaw = (voltageDropRaw / currentRaw) / 1000;
 
 	if (voltageDropRaw == 0) {
 		sprintf(resistance, "--");
@@ -293,7 +293,7 @@ void sensingRead(void) {
 	//								LIS3MDL OFFSET CORRECTION
 
 //	//for 4 Gs
-	magneticFieldXADC = magneticFieldXADC  + offsetMagnetometerX;
+	magneticFieldXADC = magneticFieldXADC + offsetMagnetometerX;
 	magneticFieldYADC = magneticFieldYADC + offsetMagnetometerY;
 
 //	magneticFieldXADC = 0;
@@ -301,10 +301,53 @@ void sensingRead(void) {
 
 	//								LIS3MDL DECREASE VALUE
 
-	uint16_t magneticFieldDivider = 270;
+//	uint16_t magneticFieldDivider = 270;
+	uint16_t magneticFieldDivider = 130;
 
-	magneticFieldX = magneticFieldXADC / magneticFieldDivider;
-	magneticFieldY = magneticFieldYADC / ((float) magneticFieldDivider * 1.66);
+	//old method
+//	magneticFieldX = magneticFieldXADC / magneticFieldDivider;
+//	magneticFieldY = magneticFieldYADC / ((float) magneticFieldDivider * 1.66);
+//
+//	if (magneticFieldX > 18)
+//		magneticFieldX = 18;
+//	if (magneticFieldX < -18)
+//		magneticFieldX = -18;
+//
+//	if (magneticFieldY > 12)
+//		magneticFieldY = 12;
+//	if (magneticFieldY < -12)
+//		magneticFieldY = -12;
+
+//	new method
+	magneticFieldContainerX[magneticFieldCounter] = magneticFieldXADC
+			/ magneticFieldDivider;
+	magneticFieldContainerY[magneticFieldCounter] = magneticFieldYADC
+			/ magneticFieldDivider;
+
+	magneticFieldMinX = 0;
+	magneticFieldMaxX = 0;
+	magneticFieldMinY = 0;
+	magneticFieldMaxY = 0;
+
+	//finx max and min value
+
+	magneticFieldMaxX = findMax(magneticFieldContainerX,
+			MAGNETIC_FIELD_MEASURES);
+	magneticFieldMinX = findMin(magneticFieldContainerX,
+			MAGNETIC_FIELD_MEASURES);
+
+	magneticFieldMaxY = findMax(magneticFieldContainerY,
+			MAGNETIC_FIELD_MEASURES);
+	magneticFieldMinY = findMin(magneticFieldContainerY,
+			MAGNETIC_FIELD_MEASURES);
+
+	magneticFieldCenterX = (magneticFieldMaxX + magneticFieldMinX) / 2;
+	magneticFieldCenterY = (magneticFieldMaxY + magneticFieldMinY) / 2;
+
+	magneticFieldX = magneticFieldContainerX[magneticFieldCounter]
+			- magneticFieldCenterX;
+	magneticFieldY = magneticFieldContainerY[magneticFieldCounter]
+			- magneticFieldCenterY;
 
 	if (magneticFieldX > 18)
 		magneticFieldX = 18;
@@ -315,6 +358,10 @@ void sensingRead(void) {
 		magneticFieldY = 12;
 	if (magneticFieldY < -12)
 		magneticFieldY = -12;
+
+	magneticFieldCounter++;
+	if (magneticFieldCounter >= MAGNETIC_FIELD_MEASURES)
+		magneticFieldCounter = 0;
 
 	//								LIS3MDL SEND SLEEP COMMAND
 
@@ -381,4 +428,25 @@ BME280_U32_t BME280_compensate_H_int32(BME280_S32_t adc_H) {
 	v_x1_u32r = (v_x1_u32r < 0 ? 0 : v_x1_u32r);
 	v_x1_u32r = (v_x1_u32r > 419430400 ? 419430400 : v_x1_u32r);
 	return (BME280_U32_t) (v_x1_u32r >> 12);
+}
+
+int16_t findMax(int16_t *data, uint16_t size) {
+
+	int16_t max = -32768;
+	for (uint32_t i = 0; i < size; i++) {
+		if (data[i] > max)
+			max = data[i];
+	}
+
+	return max;
+
+}
+int16_t findMin(int16_t *data, uint16_t size) {
+	int16_t min = 32767;
+	for (uint32_t i = 0; i < size; i++) {
+		if (data[i] < min)
+			min = data[i];
+	}
+
+	return min;
 }

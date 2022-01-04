@@ -232,13 +232,13 @@ void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin) {
 
 						if (HAL_GPIO_ReadPin(SET_GPIO_Port, SET_Pin) == 1) {
 							pressureReference++;
-							if (pressureReference > 1100)
-								pressureReference = 900;
+							if (pressureReference > 1300)
+								pressureReference = 700;
 						} else if (HAL_GPIO_ReadPin(SET_GPIO_Port, SET_Pin)
 								== 0) {
 							pressureReference--;
-							if (pressureReference < 900)
-								pressureReference = 1100;
+							if (pressureReference < 700)
+								pressureReference = 1300;
 						}
 						break;
 
