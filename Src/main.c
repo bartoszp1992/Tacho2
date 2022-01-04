@@ -142,18 +142,18 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include "../Display/e-Paper/EPD_1in54_V2.h"
-#include "../Display/Config/DEV_Config.h"
-#include "../Display/GUI/GUI_Paint.h"
-#include "../Display/Examples/EPD_Test.h"
-#include "../Display/Examples/ImageData.h"
+#include "Display/e-Paper/EPD_1in54_V2.h"
+#include "Display/Config/DEV_Config.h"
+#include "Display/GUI/GUI_Paint.h"
+#include "Display/Examples/EPD_Test.h"
+#include "Display/Examples/ImageData.h"
 
-#include "../Interface/interface.h"
-#include "../RTC/rtc.h"
-#include "../Settings/settings.h"
-#include "../Buttons/buttons.h"
-#include "../Sensing/sensing.h"
-#include "../Timers/timers.h"
+#include "Interface/interface.h"
+#include "RTC/rtc.h"
+#include "Settings/settings.h"
+#include "Buttons/buttons.h"
+#include "Sensing/sensing.h"
+#include "Timers/timers.h"
 
 //#include "../BMP280/bmp280.h"
 

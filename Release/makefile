@@ -9,20 +9,20 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include Timers/subdir.mk
 -include Startup/subdir.mk
+-include Src/Timers/subdir.mk
+-include Src/Settings/subdir.mk
+-include Src/Sensing/subdir.mk
+-include Src/RTC/subdir.mk
+-include Src/Interface/subdir.mk
+-include Src/Display/e-Paper/subdir.mk
+-include Src/Display/GUI/subdir.mk
+-include Src/Display/Fonts/subdir.mk
+-include Src/Display/Examples/subdir.mk
+-include Src/Display/Config/subdir.mk
+-include Src/Buttons/subdir.mk
 -include Src/subdir.mk
--include Settings/subdir.mk
--include Sensing/subdir.mk
--include RTC/subdir.mk
--include Interface/subdir.mk
 -include Drivers/STM32G0xx_HAL_Driver/Src/subdir.mk
--include Display/e-Paper/subdir.mk
--include Display/GUI/subdir.mk
--include Display/Fonts/subdir.mk
--include Display/Examples/subdir.mk
--include Display/Config/subdir.mk
--include Buttons/subdir.mk
 -include subdir.mk
 -include objects.mk
 

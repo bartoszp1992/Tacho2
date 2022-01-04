@@ -20,18 +20,18 @@ OBJCOPY_BIN :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-Buttons \
-Display/Config \
-Display/Examples \
-Display/Fonts \
-Display/GUI \
-Display/e-Paper \
 Drivers/STM32G0xx_HAL_Driver/Src \
-Interface \
-RTC \
-Sensing \
-Settings \
+Src/Buttons \
+Src/Display/Config \
+Src/Display/Examples \
+Src/Display/Fonts \
+Src/Display/GUI \
+Src/Display/e-Paper \
+Src/Interface \
+Src/RTC \
+Src/Sensing \
+Src/Settings \
+Src/Timers \
 Src \
 Startup \
-Timers \
 

@@ -1,5 +1,5 @@
-Src/main.o: ../Src/main.c ../Inc/main.h \
- ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h \
+Src/Buttons/buttons.o: ../Src/Buttons/buttons.c ../Src/Buttons/buttons.h \
+ ../Inc/main.h ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h \
  ../Inc/stm32g0xx_hal_conf.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_def.h \
@@ -38,40 +38,13 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_spi_ex.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim_ex.h \
- ../Src/Display/e-Paper/EPD_1in54_V2.h \
- ../Src/Display/e-Paper/../Config/DEV_Config.h \
- ../Src/Display/Config/DEV_Config.h ../Src/Display/GUI/GUI_Paint.h \
- ../Src/Display/GUI/../Config/DEV_Config.h \
- ../Src/Display/GUI/../Fonts/fonts.h ../Src/Display/Examples/EPD_Test.h \
- ../Src/Display/Examples/../Config/DEV_Config.h \
- ../Src/Display/Examples/../GUI/GUI_Paint.h \
- ../Src/Display/Examples/../Examples/ImageData.h \
- ../Src/Display/Examples/../Config/Debug.h \
- ../Src/Display/Examples/ImageData.h ../Src/Interface/interface.h \
- ../Src/Interface/../Display/e-Paper/EPD_1in54_V2.h \
- ../Src/Interface/../Display/Config/DEV_Config.h \
- ../Src/Interface/../Display/GUI/GUI_Paint.h \
- ../Src/Interface/../Sensing/sensing.h ../Src/Interface/../RTC/rtc.h \
- ../Src/Interface/../Timers/timers.h \
- ../Src/Interface/../Timers/../RTC/rtc.h ../Src/RTC/rtc.h \
- ../Src/Settings/settings.h \
- ../Src/Settings/../Display/e-Paper/EPD_1in54_V2.h \
- ../Src/Settings/../Display/Config/DEV_Config.h \
- ../Src/Settings/../Display/GUI/GUI_Paint.h \
- ../Src/Settings/../Interface/interface.h \
- ../Src/Settings/../Interface/../Display/e-Paper/EPD_1in54_V2.h \
- ../Src/Settings/../Interface/../Display/Config/DEV_Config.h \
- ../Src/Settings/../Interface/../Display/GUI/GUI_Paint.h \
- ../Src/Settings/../Interface/../Sensing/sensing.h \
- ../Src/Settings/../Interface/../RTC/rtc.h \
- ../Src/Settings/../Interface/../Timers/timers.h \
- ../Src/Settings/../Interface/../Timers/../RTC/rtc.h \
- ../Src/Settings/../Sensing/sensing.h ../Src/Settings/../RTC/rtc.h \
- ../Src/Buttons/buttons.h ../Src/Buttons/../RTC/rtc.h \
- ../Src/Buttons/../Settings/settings.h \
+ ../Src/Buttons/../RTC/rtc.h ../Src/Buttons/../Settings/settings.h \
  ../Src/Buttons/../Settings/../Display/e-Paper/EPD_1in54_V2.h \
+ ../Src/Buttons/../Settings/../Display/e-Paper/../Config/DEV_Config.h \
  ../Src/Buttons/../Settings/../Display/Config/DEV_Config.h \
  ../Src/Buttons/../Settings/../Display/GUI/GUI_Paint.h \
+ ../Src/Buttons/../Settings/../Display/GUI/../Config/DEV_Config.h \
+ ../Src/Buttons/../Settings/../Display/GUI/../Fonts/fonts.h \
  ../Src/Buttons/../Settings/../Interface/interface.h \
  ../Src/Buttons/../Settings/../Interface/../Display/e-Paper/EPD_1in54_V2.h \
  ../Src/Buttons/../Settings/../Interface/../Display/Config/DEV_Config.h \
@@ -90,9 +63,9 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
  ../Src/Buttons/../Interface/../RTC/rtc.h \
  ../Src/Buttons/../Interface/../Timers/timers.h \
  ../Src/Buttons/../Interface/../Timers/../RTC/rtc.h \
- ../Src/Buttons/../Timers/timers.h ../Src/Buttons/../Timers/../RTC/rtc.h \
- ../Src/Sensing/sensing.h ../Src/Timers/timers.h \
- ../Src/Timers/../RTC/rtc.h
+ ../Src/Buttons/../Timers/timers.h ../Src/Buttons/../Timers/../RTC/rtc.h
+
+../Src/Buttons/buttons.h:
 
 ../Inc/main.h:
 
@@ -174,87 +147,21 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
 
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim_ex.h:
 
-../Src/Display/e-Paper/EPD_1in54_V2.h:
-
-../Src/Display/e-Paper/../Config/DEV_Config.h:
-
-../Src/Display/Config/DEV_Config.h:
-
-../Src/Display/GUI/GUI_Paint.h:
-
-../Src/Display/GUI/../Config/DEV_Config.h:
-
-../Src/Display/GUI/../Fonts/fonts.h:
-
-../Src/Display/Examples/EPD_Test.h:
-
-../Src/Display/Examples/../Config/DEV_Config.h:
-
-../Src/Display/Examples/../GUI/GUI_Paint.h:
-
-../Src/Display/Examples/../Examples/ImageData.h:
-
-../Src/Display/Examples/../Config/Debug.h:
-
-../Src/Display/Examples/ImageData.h:
-
-../Src/Interface/interface.h:
-
-../Src/Interface/../Display/e-Paper/EPD_1in54_V2.h:
-
-../Src/Interface/../Display/Config/DEV_Config.h:
-
-../Src/Interface/../Display/GUI/GUI_Paint.h:
-
-../Src/Interface/../Sensing/sensing.h:
-
-../Src/Interface/../RTC/rtc.h:
-
-../Src/Interface/../Timers/timers.h:
-
-../Src/Interface/../Timers/../RTC/rtc.h:
-
-../Src/RTC/rtc.h:
-
-../Src/Settings/settings.h:
-
-../Src/Settings/../Display/e-Paper/EPD_1in54_V2.h:
-
-../Src/Settings/../Display/Config/DEV_Config.h:
-
-../Src/Settings/../Display/GUI/GUI_Paint.h:
-
-../Src/Settings/../Interface/interface.h:
-
-../Src/Settings/../Interface/../Display/e-Paper/EPD_1in54_V2.h:
-
-../Src/Settings/../Interface/../Display/Config/DEV_Config.h:
-
-../Src/Settings/../Interface/../Display/GUI/GUI_Paint.h:
-
-../Src/Settings/../Interface/../Sensing/sensing.h:
-
-../Src/Settings/../Interface/../RTC/rtc.h:
-
-../Src/Settings/../Interface/../Timers/timers.h:
-
-../Src/Settings/../Interface/../Timers/../RTC/rtc.h:
-
-../Src/Settings/../Sensing/sensing.h:
-
-../Src/Settings/../RTC/rtc.h:
-
-../Src/Buttons/buttons.h:
-
 ../Src/Buttons/../RTC/rtc.h:
 
 ../Src/Buttons/../Settings/settings.h:
 
 ../Src/Buttons/../Settings/../Display/e-Paper/EPD_1in54_V2.h:
 
+../Src/Buttons/../Settings/../Display/e-Paper/../Config/DEV_Config.h:
+
 ../Src/Buttons/../Settings/../Display/Config/DEV_Config.h:
 
 ../Src/Buttons/../Settings/../Display/GUI/GUI_Paint.h:
+
+../Src/Buttons/../Settings/../Display/GUI/../Config/DEV_Config.h:
+
+../Src/Buttons/../Settings/../Display/GUI/../Fonts/fonts.h:
 
 ../Src/Buttons/../Settings/../Interface/interface.h:
 
@@ -295,9 +202,3 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
 ../Src/Buttons/../Timers/timers.h:
 
 ../Src/Buttons/../Timers/../RTC/rtc.h:
-
-../Src/Sensing/sensing.h:
-
-../Src/Timers/timers.h:
-
-../Src/Timers/../RTC/rtc.h:
