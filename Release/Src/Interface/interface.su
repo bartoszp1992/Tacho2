@@ -5,4 +5,4 @@ interface.c:527:6:interfaceUpdate	16	static
 interface.c:546:6:interfaceWrite	8	static
 interface.c:560:6:interfaceClear	8	static
 interface.c:564:6:interfaceDrawLayer	104	static
-interface.c:1241:6:interfaceDrawBatteryWarning	16	static
+interface.c:1243:6:interfaceDrawBatteryWarning	16	static

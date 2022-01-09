@@ -79,6 +79,7 @@
  2.8 added moon phase
  2.8.1 corrected moon phase
  3.0 - autocalibrating compass, new analog interface for compass
+ 3.1 - better lock indicator
 
  todo:
  -already did

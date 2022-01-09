@@ -1135,11 +1135,11 @@ void interfaceDrawLayer(uint8_t layer) {
 
 		Paint_DrawPointer(mainStartX + pointerShadowShift,
 				mainStartY + pointerShadowShift, hourAngle, hourPointerLength,
-				10, colorMain, DOT_PIXEL_3X3, LINE_STYLE_SOLID);
+				15, colorMain, DOT_PIXEL_3X3, LINE_STYLE_SOLID);
 		//^shadow
 
 		Paint_DrawPointer(mainStartX, mainStartY, hourAngle, hourPointerLength,
-				10, colorSecond, DOT_PIXEL_3X3, LINE_STYLE_SOLID);
+				15, colorSecond, DOT_PIXEL_3X3, LINE_STYLE_SOLID);
 		//^ pointer
 
 		//										MINUTE POINTER
@@ -1148,12 +1148,12 @@ void interfaceDrawLayer(uint8_t layer) {
 
 		Paint_DrawPointer(mainStartX + pointerShadowShift,
 				mainStartY + pointerShadowShift, minuteAngle,
-				minutePointerLength, 10, colorMain, DOT_PIXEL_2X2,
+				minutePointerLength, 15, colorMain, DOT_PIXEL_2X2,
 				LINE_STYLE_SOLID);
 		//^shadow
 
 		Paint_DrawPointer(mainStartX, mainStartY, minuteAngle,
-				minutePointerLength, 10, colorSecond, DOT_PIXEL_2X2,
+				minutePointerLength, 15, colorSecond, DOT_PIXEL_2X2,
 				LINE_STYLE_SOLID);
 		//^ pointer
 
@@ -1197,13 +1197,13 @@ void interfaceDrawLayer(uint8_t layer) {
 			chronoSecondsAngle = 2 * 3.14 / 60 * (chronoSeconds - 15);
 
 			Paint_DrawPointer(mainStartX, mainStartY, chronoSecondsAngle,
-					chronoSecondsPointerLength, 10, colorSecond, DOT_PIXEL_1X1,
+					chronoSecondsPointerLength, 15, colorSecond, DOT_PIXEL_1X1,
 					LINE_STYLE_SOLID);
 			//^ pointer
 
 			Paint_DrawPointer(mainStartX + pointerShadowShift,
 					mainStartY + pointerShadowShift, chronoSecondsAngle,
-					chronoSecondsPointerLength, 10, colorMain, DOT_PIXEL_1X1,
+					chronoSecondsPointerLength, 15, colorMain, DOT_PIXEL_1X1,
 					LINE_STYLE_SOLID);
 			//^shadow
 		}
@@ -1227,10 +1227,12 @@ void interfaceDrawLayer(uint8_t layer) {
 
 		//										LOCK INDICATOR
 		if (flagLocked == LOCKED) {
-			Paint_DrawCircle(mainStartX, mainStartY, 10, colorSecond,
-					DOT_PIXEL_2X2, DRAW_FILL_FULL);
+//			Paint_DrawCircle(mainStartX, mainStartY, 5, colorSecond,
+//					DOT_PIXEL_2X2, DRAW_FILL_FULL);
+//			Paint_DrawCircle(mainStartX, mainStartY, 14, colorSecond,
+//								DOT_PIXEL_2X2, DRAW_FILL_EMPTY);
 		} else {
-			Paint_DrawCircle(mainStartX, mainStartY, 10, colorSecond,
+			Paint_DrawCircle(mainStartX, mainStartY, 14, colorSecond,
 					DOT_PIXEL_2X2, DRAW_FILL_EMPTY);
 		}
 
