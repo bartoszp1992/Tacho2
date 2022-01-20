@@ -92,5 +92,3 @@ extern uint16_t batteryVoltageMinimum;
 #endif
 
 #endif /* __MAIN_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

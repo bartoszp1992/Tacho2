@@ -31,9 +31,13 @@
 #define WAKE_UP_05S  0x4C4
 #define WAKE_UP_01S 0xF4
 
-#define WAKE_UP_ULTRA_LONG WAKE_UP_26S //used if battery dead
-#define WAKE_UP_LONG WAKE_UP_26S //used in normmal mode
-#define WAKE_UP_SHORT WAKE_UP_26S //used in chrono mode
+//#define WAKE_UP_ULTRA_LONG WAKE_UP_26S //used if battery dead
+//#define WAKE_UP_LONG WAKE_UP_26S //used in normmal mode
+//#define WAKE_UP_SHORT WAKE_UP_26S //used in chrono mode
+
+#define WAKE_UP_ULTRA_LONG 60
+#define WAKE_UP_LONG 60
+#define WAKE_UP_SHORT 60
 
 extern RTC_HandleTypeDef hrtc;
 

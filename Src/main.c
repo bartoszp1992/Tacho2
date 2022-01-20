@@ -80,6 +80,7 @@
  2.8.1 corrected moon phase
  3.0 - autocalibrating compass, new analog interface for compass
  3.1 - better lock indicator
+ 3.11 - better lifetime
 
  todo:
  -already did
@@ -272,7 +273,7 @@ int main(void) {
 	//										RTC INITIALISATION
 	rtcInit();
 	HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, WAKE_UP_LONG,
-	RTC_WAKEUPCLOCK_RTCCLK_DIV16);
+	RTC_WAKEUPCLOCK_CK_SPRE_16BITS);
 
 	//										SENSORS INITIALISATION
 
@@ -316,7 +317,7 @@ int main(void) {
 		if (batteryState >= 8 && batteryLowFlag == 0) { //run once when battery low detected
 			batteryLowFlag = 1;
 			if (HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, WAKE_UP_ULTRA_LONG,
-			RTC_WAKEUPCLOCK_RTCCLK_DIV16) != HAL_OK) {
+			RTC_WAKEUPCLOCK_CK_SPRE_16BITS) != HAL_OK) {
 				Error_Handler();
 			}
 		}
@@ -324,7 +325,7 @@ int main(void) {
 		if (batteryState < 8 && batteryLowFlag == 1) { // run one when battery low disappears
 			batteryLowFlag = 0;
 			if (HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, WAKE_UP_LONG,
-			RTC_WAKEUPCLOCK_RTCCLK_DIV16) != HAL_OK) {
+			RTC_WAKEUPCLOCK_CK_SPRE_16BITS) != HAL_OK) {
 				Error_Handler();
 			}
 		}
@@ -344,7 +345,6 @@ int main(void) {
 		//									NORMAL MODE
 
 		if (flagSettings == FLAG_SETTINGS_OFF && batteryLowFlag != 1) {
-
 
 			interfaceDrawLayer(1);
 			interfaceDrawLayer(2);
@@ -366,7 +366,7 @@ int main(void) {
 		if ((flagSettings == FLAG_SETTINGS_OFF && flagDontSleep != 1
 				&& HAL_GPIO_ReadPin(RESET_GPIO_Port, RESET_Pin) == 1)
 				&& !(mode == MODE_CHRONO && chronoMinutes < 1)
-				&& LPMode == 1 && counterForce >= ON_TIME) {//sleep only when reset button is released
+				&& LPMode == 1&& counterForce >= ON_TIME) {	//sleep only when reset button is released
 
 				//to do in sleep mode
 //			EPD_1IN54_V2_Sleep();
@@ -402,7 +402,6 @@ int main(void) {
 void SystemClock_Config(void) {
 	RCC_OscInitTypeDef RCC_OscInitStruct = { 0 };
 	RCC_ClkInitTypeDef RCC_ClkInitStruct = { 0 };
-	RCC_PeriphCLKInitTypeDef PeriphClkInit = { 0 };
 
 	/** Configure the main internal regulator output voltage
 	 */
@@ -440,17 +439,6 @@ void SystemClock_Config(void) {
 	if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK) {
 		Error_Handler();
 	}
-	/** Initializes the peripherals clocks
-	 */
-	PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_RTC | RCC_PERIPHCLK_I2C1
-			| RCC_PERIPHCLK_ADC;
-	PeriphClkInit.I2c1ClockSelection = RCC_I2C1CLKSOURCE_HSI;
-	PeriphClkInit.AdcClockSelection = RCC_ADCCLKSOURCE_HSI;
-	PeriphClkInit.RTCClockSelection = RCC_RTCCLKSOURCE_LSE;
-
-	if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK) {
-		Error_Handler();
-	}
 }
 
 /**
@@ -472,7 +460,7 @@ static void MX_ADC1_Init(void) {
 	/** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
 	 */
 	hadc1.Instance = ADC1;
-	hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
+	hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
 	hadc1.Init.Resolution = ADC_RESOLUTION_12B;
 	hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
 	hadc1.Init.ScanConvMode = ADC_SCAN_ENABLE;
@@ -621,7 +609,7 @@ static void MX_RTC_Init(void) {
 	}
 	/** Enable the WakeUp
 	 */
-	if (HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 65535, RTC_WAKEUPCLOCK_RTCCLK_DIV16)
+	if (HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 60, RTC_WAKEUPCLOCK_CK_SPRE_16BITS)
 			!= HAL_OK) {
 		Error_Handler();
 	}
@@ -812,4 +800,3 @@ void assert_failed(uint8_t *file, uint32_t line)
 }
 #endif /* USE_FULL_ASSERT */
 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
