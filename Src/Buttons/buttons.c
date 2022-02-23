@@ -50,9 +50,6 @@ void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin) {
 
 					if (mode == MODE_NORMAL) { // start chrono if mode is set as normal
 
-						HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, WAKE_UP_SHORT,
-								RTC_WAKEUPCLOCK_CK_SPRE_16BITS);
-
 						HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 						HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 
@@ -69,9 +66,6 @@ void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin) {
 					}
 
 					else if (mode == MODE_CHRONO) { //stop chrono if chrono is working
-
-						HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, WAKE_UP_SHORT,
-						RTC_WAKEUPCLOCK_CK_SPRE_16BITS);
 
 						HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 						HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
@@ -297,8 +291,6 @@ void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin) {
 					mode = MODE_NORMAL;
 					rtcResetChrono();
 
-					HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, WAKE_UP_LONG,
-					RTC_WAKEUPCLOCK_CK_SPRE_16BITS);
 				}
 
 				else if (flagSettings == FLAG_SETTINGS_ON) {
@@ -324,18 +316,13 @@ void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin) {
 				if (flagSettings == FLAG_SETTINGS_OFF
 						&& HAL_GPIO_ReadPin(RESET_GPIO_Port, RESET_Pin) == 1) { //go to settings only when Reset button is released
 
-					HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, WAKE_UP_SHORT,
-							RTC_WAKEUPCLOCK_CK_SPRE_16BITS);
-//					modeBackup = mode;// legacy, fot keep chrono
 					flagSettings = FLAG_SETTINGS_ON;
 					counterSettings = SETTINGS_TIME;
 					settingsPointer = 7;
 
 				} else if (flagSettings == FLAG_SETTINGS_ON
 						&& HAL_GPIO_ReadPin(START_GPIO_Port, START_Pin) == 1) {
-					HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, WAKE_UP_LONG,
-							RTC_WAKEUPCLOCK_CK_SPRE_16BITS);
-//					mode = modeBackup; /legacy, for keep chrono
+
 					flagSettings = FLAG_SETTINGS_OFF;
 					counterSettings = 0;
 					interfaceSelectColorScheme(colorScheme);

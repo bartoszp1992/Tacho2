@@ -10,41 +10,11 @@
 
 #define FLAG_SETTINGS_ON 1
 #define FLAG_SETTINGS_OFF 0
-//#define MODE_SETTINGS 3
 
-//wake up counter:
-//
-//Wakeup Time Base = 16 (RTC Clock Div) /(39.000KHz) = 0,410 ms
-//Wakeup Time = 10s = 0,410ms * WakeUpCounter
-//WakeUpCounter = 10s /0,410ms = 24 390= 0x5F46
-//
-// 0x2FA3 for 5sec
-// 0x5F46 for 10 sec
-// 0x987 for 1 sec
-
-
-#define WAKE_UP_26S 0xF7B7
-#define WAKE_UP_10S 0x5F46
-#define WAKE_UP_5S  0x2FA3
-#define WAKE_UP_1S  0x987
-#define WAKE_UP_2S 0x130E
-#define WAKE_UP_05S  0x4C4
-#define WAKE_UP_01S 0xF4
-
-//#define WAKE_UP_ULTRA_LONG WAKE_UP_26S //used if battery dead
-//#define WAKE_UP_LONG WAKE_UP_26S //used in normmal mode
-//#define WAKE_UP_SHORT WAKE_UP_26S //used in chrono mode
 
 #define WAKE_UP_ULTRA_LONG 60
-#define WAKE_UP_LONG 60
-#define WAKE_UP_SHORT 60
 
 extern RTC_HandleTypeDef hrtc;
-
-
-
-//RTC_DateTypeDef gDate;
-//RTC_TimeTypeDef gTime;
 
 RTC_DateTypeDef sDate;
 RTC_TimeTypeDef sTime;

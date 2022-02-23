@@ -1241,6 +1241,8 @@ void interfaceDrawLayer(uint8_t layer) {
 }
 
 void interfaceDrawBatteryWarning() {
+	interfaceClear();
 	Paint_DrawString_EN(105, 90, "CHARGE", &Font16, colorSecond, colorMain);
+	interfaceWrite();	//burn framebuffer
 }
 

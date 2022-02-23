@@ -147,6 +147,7 @@ char resistance[5];
 
 uint16_t batteryLevels[7];
 uint8_t batteryLowFlag;
+uint8_t batteryWarningPrintedFlag;
 
 //I2C timeout
 uint8_t i2cTimeout;

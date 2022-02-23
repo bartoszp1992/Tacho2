@@ -1,0 +1,8 @@
+sensing.c:31:6:float2Text	32	static
+sensing.c:41:6:sensingInit	72	static
+sensing.c:88:6:sensingRead	104	static
+sensing.c:389:14:BME280_compensate_T_int32	32	static
+sensing.c:402:14:BME280_compensate_P_int64	200	static
+sensing.c:424:14:BME280_compensate_H_int32	24	static
+sensing.c:445:9:findMax	24	static
+sensing.c:456:9:findMin	24	static

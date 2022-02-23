@@ -7,6 +7,9 @@ void rtcInit(void) {
 	mode = MODE_NORMAL
 	;
 
+	HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, WAKE_UP_ULTRA_LONG,
+		RTC_WAKEUPCLOCK_CK_SPRE_16BITS);
+
 }
 
 

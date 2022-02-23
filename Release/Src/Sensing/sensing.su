@@ -1,8 +1,8 @@
 sensing.c:31:6:float2Text	16	static
+sensing.c:388:14:BME280_compensate_T_int32	0	static
+sensing.c:401:14:BME280_compensate_P_int64	40	static
+sensing.c:423:14:BME280_compensate_H_int32	0	static
+sensing.c:444:9:findMax	12	static
+sensing.c:455:9:findMin	12	static
+sensing.c:88:6:sensingRead	80	static
 sensing.c:41:6:sensingInit	80	static
-sensing.c:377:14:BME280_compensate_T_int32	0	static
-sensing.c:390:14:BME280_compensate_P_int64	40	static
-sensing.c:412:14:BME280_compensate_H_int32	0	static
-sensing.c:433:9:findMax	12	static
-sensing.c:444:9:findMin	12	static
-sensing.c:86:6:sensingRead	72	static

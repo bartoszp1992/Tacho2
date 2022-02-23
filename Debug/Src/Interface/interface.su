@@ -1,0 +1,8 @@
+interface.c:7:6:interfaceSelectLayout	16	static
+interface.c:444:6:interfaceSelectColorScheme	16	static
+interface.c:454:6:interfaceInit	32	static
+interface.c:527:6:interfaceUpdate	16	static
+interface.c:546:6:interfaceWrite	8	static
+interface.c:560:6:interfaceClear	8	static
+interface.c:564:6:interfaceDrawLayer	72	static
+interface.c:1243:6:interfaceDrawBatteryWarning	16	static

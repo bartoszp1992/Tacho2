@@ -9,21 +9,20 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include Timers/subdir.mk
 -include Startup/subdir.mk
+-include Src/Timers/subdir.mk
+-include Src/Settings/subdir.mk
+-include Src/Sensing/subdir.mk
+-include Src/RTC/subdir.mk
+-include Src/Interface/subdir.mk
+-include Src/Display/e-Paper/subdir.mk
+-include Src/Display/GUI/subdir.mk
+-include Src/Display/Fonts/subdir.mk
+-include Src/Display/Examples/subdir.mk
+-include Src/Display/Config/subdir.mk
+-include Src/Buttons/subdir.mk
 -include Src/subdir.mk
--include Settings/subdir.mk
--include Sensing/subdir.mk
--include RTC/subdir.mk
--include Interface/subdir.mk
 -include Drivers/STM32G0xx_HAL_Driver/Src/subdir.mk
--include Display/e-Paper/subdir.mk
--include Display/GUI/subdir.mk
--include Display/Fonts/subdir.mk
--include Display/Examples/subdir.mk
--include Display/Config/subdir.mk
--include Buttons/subdir.mk
--include subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -48,8 +47,8 @@ $(wildcard ../makefile.targets) \
 
 BUILD_ARTIFACT_NAME := Tacho2
 BUILD_ARTIFACT_EXTENSION := elf
-BUILD_ARTIFACT_PREFIX := 
-BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME).$(BUILD_ARTIFACT_EXTENSION)
+BUILD_ARTIFACT_PREFIX :=
+BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
@@ -94,7 +93,7 @@ Tacho2.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 
 # Other Targets
 clean:
-	-$(RM) *
+	-$(RM) Tacho2.bin Tacho2.elf Tacho2.list default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
@@ -106,7 +105,6 @@ fail-specified-linker-script-missing:
 warn-no-linker-script-specified:
 	@echo 'Warning: No linker script specified. Check the linker settings in the build configuration.'
 
-.PHONY: all clean dependents fail-specified-linker-script-missing warn-no-linker-script-specified
-.SECONDARY:
+.PHONY: all clean dependents main-build fail-specified-linker-script-missing warn-no-linker-script-specified
 
 -include ../makefile.targets

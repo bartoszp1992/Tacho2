@@ -81,12 +81,13 @@ void sensingInit() {
 	dig_H5 = (((int16_t) dig_H_2_6[4]) >> 4 | ((int16_t) dig_H_2_6[5]) << 4);
 	dig_H6 = ((unsigned char) dig_H_2_6[6]);
 
+	sensingRead();
+
 }
 
 void sensingRead(void) {
 
 	//								ADC READINGS
-
 	HAL_ADC_Start_DMA(&hadc1, (uint32_t*) adcReading, 3);
 
 	uint32_t voltageBatteryRaw;
@@ -159,6 +160,16 @@ void sensingRead(void) {
 	} else {
 		float2Text(resistance, resistanceRaw);
 	}
+
+	if (batteryState >= 8) {
+
+		batteryLowFlag = 1;
+
+	}else{
+		batteryLowFlag = 0;
+		batteryWarningPrintedFlag = 0;
+	}
+
 
 //								BME280 READINGS
 
@@ -332,14 +343,14 @@ void sensingRead(void) {
 	//finx max and min value
 
 	magneticFieldMaxX = findMax(magneticFieldContainerX,
-			MAGNETIC_FIELD_MEASURES);
+	MAGNETIC_FIELD_MEASURES);
 	magneticFieldMinX = findMin(magneticFieldContainerX,
-			MAGNETIC_FIELD_MEASURES);
+	MAGNETIC_FIELD_MEASURES);
 
 	magneticFieldMaxY = findMax(magneticFieldContainerY,
-			MAGNETIC_FIELD_MEASURES);
+	MAGNETIC_FIELD_MEASURES);
 	magneticFieldMinY = findMin(magneticFieldContainerY,
-			MAGNETIC_FIELD_MEASURES);
+	MAGNETIC_FIELD_MEASURES);
 
 	magneticFieldCenterX = (magneticFieldMaxX + magneticFieldMinX) / 2;
 	magneticFieldCenterY = (magneticFieldMaxY + magneticFieldMinY) / 2;

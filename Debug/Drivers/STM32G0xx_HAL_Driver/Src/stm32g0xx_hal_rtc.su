@@ -19,3 +19,8 @@ stm32g0xx_hal_rtc.c:1742:19:RTC_EnterInitMode	24	static
 stm32g0xx_hal_rtc.c:1773:19:RTC_ExitInitMode	32	static
 stm32g0xx_hal_rtc.c:1810:9:RTC_ByteToBcd2	24	static
 stm32g0xx_hal_rtc.c:1829:9:RTC_Bcd2ToByte	24	static
+stm32g0xx_hal_rtc.c:1842:6:HAL_RTC_DST_Add1Hour	16	static
+stm32g0xx_hal_rtc.c:1855:6:HAL_RTC_DST_Sub1Hour	16	static
+stm32g0xx_hal_rtc.c:1868:6:HAL_RTC_DST_SetStoreOperation	16	static
+stm32g0xx_hal_rtc.c:1880:6:HAL_RTC_DST_ClearStoreOperation	16	static
+stm32g0xx_hal_rtc.c:1892:10:HAL_RTC_DST_ReadStoreOperation	16	static
