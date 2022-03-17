@@ -21,17 +21,12 @@ OBJCOPY_BIN :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 Drivers/STM32G0xx_HAL_Driver/Src \
-Src/Buttons \
-Src/Display/Config \
-Src/Display/Examples \
-Src/Display/Fonts \
-Src/Display/GUI \
-Src/Display/e-Paper \
-Src/Interface \
-Src/RTC \
-Src/Sensing \
-Src/Settings \
-Src/Timers \
+Src/Display_Config \
+Src/Display_EPD \
+Src/Display_GUI \
+Src/EEPROM_Emul \
+Src/Flash_Interface \
+Src/Fonts \
 Src \
 Startup \
 
