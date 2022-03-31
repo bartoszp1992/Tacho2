@@ -83,6 +83,7 @@
  3.11 - better lifetime
  3.2- dont refresh screen if battery is low
  3.3 -added flash backup
+ 3.4 - properly working chronograph
 
  todo:
  -already did
