@@ -12,9 +12,8 @@ uint8_t ctrlMagnetometerSingle = LIS3MDL_MODE_SINGLE;
 uint8_t ctrlMagnetometerContinous = LIS3MDL_MODE_CONTINOUS;
 
 //								BATTERY LEVELS AND FLAGS
-
-uint16_t batteryLevels[] = { 3750, 3800, 3900, 3950, 4000, 4050, 4100 };
-uint8_t batteryLowFlag = 0;
+uint16_t batteryLevels[] = { 3600, 3750, 3800, 3850, 3950, 4020, 4110 };//old
+//uint16_t batteryLevels[] = { 3750, 3800, 3900, 3950, 4000, 4050, 4100 };
 
 uint8_t i2cTimeout = 200;
 
@@ -163,7 +162,7 @@ void sensingRead(void) {
 
 	if (batteryState >= 8) {
 
-		batteryLowFlag = 1;
+		flagBatteryLow = 1;
 
 	}else{
 		flagBatteryLow = 0;

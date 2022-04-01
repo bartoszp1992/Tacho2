@@ -145,16 +145,18 @@ char voltagePassive[5]; //voltometer
 char voltageDrop[5]; //ohmometer
 char resistance[5];
 
+//private
 uint16_t batteryLevels[7];
-uint8_t flagBatteryLow;
-uint8_t flagBatteryWarningPrinted;
+
+//global
+volatile uint8_t flagBatteryLow;
+volatile uint8_t flagBatteryWarningPrinted;
 
 //I2C timeout
+//private
 uint8_t i2cTimeout;
 
 
-
-//void sensingInit(void);
 
 void sensingRead(void);
 void sensingInit(void);
