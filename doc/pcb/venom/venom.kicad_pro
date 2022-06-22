@@ -353,7 +353,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "sense.kicad_pro",
+    "filename": "venom.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -385,7 +385,7 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "sense.net",
+      "netlist": "venom.net",
       "specctra_dsn": "",
       "step": "",
       "vrml": ""
@@ -430,11 +430,6 @@
     "subpart_first_id": 65,
     "subpart_id_separator": 0
   },
-  "sheets": [
-    [
-      "2dc54bac-8640-4dd7-b8ed-3c7acb01a8ea",
-      ""
-    ]
-  ],
+  "sheets": [],
   "text_variables": {}
 }

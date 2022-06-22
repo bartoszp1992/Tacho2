@@ -52781,7 +52781,7 @@ Disassembly of section .data:
 20000032:	                                         ..
 
 20000034 <batteryLevels>:
-20000034:	0ed80ea6 0f6e0f3c 0fd20fa0               ....<.n.......
+20000034:	0ea60e10 0f0a0ed8 0fb40f6e               ........n.....
 
 20000042 <i2cTimeout>:
 20000042:	                                         ..
