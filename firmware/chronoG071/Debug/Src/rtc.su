@@ -1,0 +1,4 @@
+rtc.c:5:6:rtcInit	8	static
+rtc.c:16:6:rtcGetTime	72	static
+rtc.c:110:6:rtcSetTime	8	static
+rtc.c:125:6:rtcResetChrono	8	static

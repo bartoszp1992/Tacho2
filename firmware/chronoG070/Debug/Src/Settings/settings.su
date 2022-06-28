@@ -1,0 +1,3 @@
+settings.c:20:6:settingsDrawData	24	static
+settings.c:121:6:settingsDrawSubs	24	static
+settings.c:136:6:settingsDrawPointer	32	static
