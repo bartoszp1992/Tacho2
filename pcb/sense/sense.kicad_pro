@@ -50,8 +50,8 @@
       },
       "diff_pair_dimensions": [],
       "drc_exclusions": [
-        "silk_over_copper|170342359|120680000|00000000-0000-0000-0000-00005dd6918a|e0c7ddff-8c90-465f-be62-21fb49b059fa",
-        "silk_over_copper|170344118|116870000|00000000-0000-0000-0000-00005dd6918a|9aaeec6e-84fe-4644-b0bc-5de24626ff48"
+        "silk_over_copper|170342358|120680000|00000000-0000-0000-0000-00005dd6918a|f837476f-96c8-4925-a631-e5d17a2f93e0",
+        "silk_over_copper|170344117|116870000|00000000-0000-0000-0000-00005dd6918a|304ee429-19e2-422a-b5cc-5db169e0bed7"
       ],
       "meta": {
         "filename": "board_design_settings.json",

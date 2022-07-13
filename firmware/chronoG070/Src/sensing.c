@@ -39,6 +39,7 @@ void float2Text(char *str, float input) {
 
 void sensingInit() {
 
+	HAL_ADCEx_Calibration_Start(&hadc1);
 	HAL_ADC_Start_DMA(&hadc1, (uint32_t*) adcReading, 3);
 
 	uint8_t dig_T[6];
